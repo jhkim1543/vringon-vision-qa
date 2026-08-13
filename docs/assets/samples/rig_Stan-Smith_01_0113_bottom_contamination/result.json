@@ -1,0 +1,46 @@
+{
+ "id": "rig_Stan-Smith_01_0113_bottom_contamination",
+ "w": 349,
+ "h": 199,
+ "sku": "Stan-Smith",
+ "colorway_refs": 6,
+ "kind": "defect",
+ "verdict": "fail",
+ "detections": [
+  {
+   "type": "bottom_contamination",
+   "part": "midsole",
+   "bbox": [
+    86,
+    146,
+    93,
+    38
+   ],
+   "area_pct": 5.124,
+   "z_max": 16.23,
+   "confidence": 0.99,
+   "severity": "major"
+  }
+ ],
+ "gt": {
+  "type": "bottom_contamination",
+  "pixel_auroc": 0.999,
+  "iou": 0.345,
+  "localized": true,
+  "type_match": true
+ },
+ "parts_pct": {
+  "upper": 57.7,
+  "toe": 7.6,
+  "heel": 11.0,
+  "collar": 4.9,
+  "midsole": 8.7,
+  "outsole": 10.7,
+  "cement_boundary": 7.1
+ },
+ "z_mean": 0.64,
+ "z_max": 16.23,
+ "det_thr": 4.92,
+ "t_bank_s": 0.0,
+ "t_infer_s": 6.0
+}

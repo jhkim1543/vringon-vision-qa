@@ -1,0 +1,25 @@
+{
+ "id": "rig_Superstar_01_0047_ok",
+ "w": 474,
+ "h": 244,
+ "sku": "Superstar",
+ "colorway_refs": 6,
+ "kind": "normal",
+ "verdict": "pass",
+ "detections": [],
+ "gt": null,
+ "parts_pct": {
+  "upper": 77.6,
+  "toe": 13.8,
+  "heel": 19.9,
+  "collar": 6.5,
+  "midsole": 12.6,
+  "outsole": 15.5,
+  "cement_boundary": 8.1
+ },
+ "z_mean": 0.69,
+ "z_max": 7.97,
+ "det_thr": 6.44,
+ "t_bank_s": 0.0,
+ "t_infer_s": 3.0
+}

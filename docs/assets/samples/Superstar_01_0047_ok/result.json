@@ -1,0 +1,82 @@
+{
+ "id": "Superstar_01_0047_ok",
+ "w": 474,
+ "h": 244,
+ "sku": "Superstar",
+ "colorway_refs": 7,
+ "kind": "normal",
+ "verdict": "review",
+ "detections": [
+  {
+   "type": "upper_contamination",
+   "part": "heel",
+   "bbox": [
+    407,
+    79,
+    62,
+    36
+   ],
+   "area_pct": 2.199,
+   "z_max": 2.48,
+   "confidence": 0.84,
+   "severity": "minor"
+  },
+  {
+   "type": "upper_contamination",
+   "part": "collar",
+   "bbox": [
+    224,
+    31,
+    60,
+    32
+   ],
+   "area_pct": 2.363,
+   "z_max": 2.16,
+   "confidence": 0.73,
+   "severity": "minor"
+  },
+  {
+   "type": "upper_contamination",
+   "part": "upper",
+   "bbox": [
+    335,
+    70,
+    47,
+    27
+   ],
+   "area_pct": 1.863,
+   "z_max": 2.05,
+   "confidence": 0.69,
+   "severity": "minor"
+  },
+  {
+   "type": "surface_anomaly",
+   "part": "heel",
+   "bbox": [
+    429,
+    145,
+    19,
+    18
+   ],
+   "area_pct": 0.466,
+   "z_max": 1.54,
+   "confidence": 0.52,
+   "severity": "review"
+  }
+ ],
+ "gt": null,
+ "parts_pct": {
+  "upper": 77.9,
+  "toe": 13.3,
+  "heel": 20.0,
+  "collar": 6.7,
+  "midsole": 12.6,
+  "outsole": 15.5,
+  "cement_boundary": 8.2
+ },
+ "z_mean": -0.22,
+ "z_max": 2.48,
+ "det_thr": 1.48,
+ "t_bank_s": 0.0,
+ "t_infer_s": 5.8
+}

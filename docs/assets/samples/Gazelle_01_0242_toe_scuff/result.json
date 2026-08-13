@@ -1,0 +1,60 @@
+{
+ "id": "Gazelle_01_0242_toe_scuff",
+ "w": 377,
+ "h": 157,
+ "sku": "Gazelle",
+ "colorway_refs": 3,
+ "kind": "defect",
+ "verdict": "fail",
+ "detections": [
+  {
+   "type": "toe_scuff",
+   "part": "toe",
+   "bbox": [
+    18,
+    105,
+    59,
+    31
+   ],
+   "area_pct": 4.012,
+   "z_max": 3.36,
+   "confidence": 0.84,
+   "severity": "major"
+  },
+  {
+   "type": "surface_anomaly",
+   "part": "collar",
+   "bbox": [
+    227,
+    11,
+    34,
+    26
+   ],
+   "area_pct": 1.594,
+   "z_max": 2.58,
+   "confidence": 0.65,
+   "severity": "review"
+  }
+ ],
+ "gt": {
+  "type": "toe_scuff",
+  "pixel_auroc": 0.9724,
+  "iou": 0.468,
+  "localized": true,
+  "type_match": true
+ },
+ "parts_pct": {
+  "upper": 54.6,
+  "toe": 9.9,
+  "heel": 13.6,
+  "collar": 4.0,
+  "midsole": 8.6,
+  "outsole": 10.5,
+  "cement_boundary": 10.1
+ },
+ "z_mean": 0.16,
+ "z_max": 3.36,
+ "det_thr": 1.99,
+ "t_bank_s": 0.0,
+ "t_infer_s": 4.6
+}

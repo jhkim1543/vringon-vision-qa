@@ -1,0 +1,16 @@
+{
+ "dataset": "VisA cashew (CC BY 4.0, real factory defects)",
+ "n_bank": 120,
+ "n_test_normal": 40,
+ "n_test_anomaly": 60,
+ "image_auroc": 0.9583,
+ "pixel_auroc": 0.992,
+ "examples": [
+  "000",
+  "001",
+  "002",
+  "003",
+  "004",
+  "005"
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "id": "rig_Gazelle_01_0242_toe_scuff",
+ "w": 377,
+ "h": 157,
+ "sku": "Gazelle",
+ "colorway_refs": 6,
+ "kind": "defect",
+ "verdict": "review",
+ "detections": [
+  {
+   "type": "surface_anomaly",
+   "part": "toe",
+   "bbox": [
+    17,
+    77,
+    84,
+    54
+   ],
+   "area_pct": 9.429,
+   "z_max": 18.66,
+   "confidence": 0.99,
+   "severity": "review"
+  }
+ ],
+ "gt": {
+  "type": "toe_scuff",
+  "pixel_auroc": 0.9957,
+  "iou": 0.502,
+  "localized": true,
+  "type_match": false
+ },
+ "parts_pct": {
+  "upper": 55.0,
+  "toe": 9.8,
+  "heel": 13.6,
+  "collar": 3.5,
+  "midsole": 8.6,
+  "outsole": 10.5,
+  "cement_boundary": 10.1
+ },
+ "z_mean": 1.55,
+ "z_max": 18.66,
+ "det_thr": 4.36,
+ "t_bank_s": 0.0,
+ "t_infer_s": 5.8
+}

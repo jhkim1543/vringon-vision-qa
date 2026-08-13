@@ -1,0 +1,46 @@
+{
+ "id": "Superstar_01_0054_toe_scuff",
+ "w": 325,
+ "h": 141,
+ "sku": "Superstar",
+ "colorway_refs": 3,
+ "kind": "defect",
+ "verdict": "review",
+ "detections": [
+  {
+   "type": "toe_scuff",
+   "part": "toe",
+   "bbox": [
+    40,
+    84,
+    22,
+    7
+   ],
+   "area_pct": 0.272,
+   "z_max": 2.31,
+   "confidence": 0.36,
+   "severity": "review"
+  }
+ ],
+ "gt": {
+  "type": "toe_scuff",
+  "pixel_auroc": 0.8997,
+  "iou": 0.073,
+  "localized": true,
+  "type_match": true
+ },
+ "parts_pct": {
+  "upper": 52.8,
+  "toe": 9.7,
+  "heel": 14.0,
+  "collar": 5.5,
+  "midsole": 8.5,
+  "outsole": 10.4,
+  "cement_boundary": 10.5
+ },
+ "z_mean": 0.16,
+ "z_max": 2.32,
+ "det_thr": 2.69,
+ "t_bank_s": 0.0,
+ "t_infer_s": 4.4
+}

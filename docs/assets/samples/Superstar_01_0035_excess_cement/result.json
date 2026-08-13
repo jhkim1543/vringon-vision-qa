@@ -1,0 +1,74 @@
+{
+ "id": "Superstar_01_0035_excess_cement",
+ "w": 474,
+ "h": 248,
+ "sku": "Superstar",
+ "colorway_refs": 5,
+ "kind": "defect",
+ "verdict": "review",
+ "detections": [
+  {
+   "type": "loose_thread",
+   "part": "heel",
+   "bbox": [
+    393,
+    111,
+    60,
+    14
+   ],
+   "area_pct": 0.933,
+   "z_max": 1.69,
+   "confidence": 0.52,
+   "severity": "minor"
+  },
+  {
+   "type": "excess_cement",
+   "part": "cement_boundary",
+   "bbox": [
+    225,
+    190,
+    63,
+    35
+   ],
+   "area_pct": 2.287,
+   "z_max": 1.68,
+   "confidence": 0.51,
+   "severity": "minor"
+  },
+  {
+   "type": "excess_cement",
+   "part": "cement_boundary",
+   "bbox": [
+    194,
+    213,
+    33,
+    14
+   ],
+   "area_pct": 0.632,
+   "z_max": 1.57,
+   "confidence": 0.46,
+   "severity": "review"
+  }
+ ],
+ "gt": {
+  "type": "excess_cement",
+  "pixel_auroc": 0.9787,
+  "iou": 0.45,
+  "localized": true,
+  "type_match": true
+ },
+ "parts_pct": {
+  "upper": 57.9,
+  "toe": 14.1,
+  "heel": 20.9,
+  "collar": 4.3,
+  "midsole": 10.1,
+  "outsole": 12.5,
+  "cement_boundary": 8.8
+ },
+ "z_mean": -0.2,
+ "z_max": 1.69,
+ "det_thr": 1.64,
+ "t_bank_s": 0.0,
+ "t_infer_s": 5.0
+}

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VRINGON Vision QA · 신발 완제품 외관 검사</title>
+<meta name="description" content="신발 이미지 업로드 → 부위 분할 → 결함 검출 · 이상탐지 QA 데모">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%235D6CFA'/><path d='M8 10l5 12h6l5-12' stroke='%23fff' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css?v=8">
+</head>
+<body>
+
+<header class="gnb">
+  <div class="gnb__brand">
+    <svg class="gnb__mark" viewBox="0 0 60 34" fill="none" aria-hidden="true">
+      <path d="M3 6l11 22h6L31 6" stroke="currentColor" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="45" cy="17" r="10.5" stroke="currentColor" stroke-width="4.4"/>
+    </svg>
+    <span class="gnb__word">VRINGON</span>
+    <span class="gnb__divider"></span>
+    <span class="gnb__app">VISION QA</span>
+  </div>
+  <span class="gnb__caption">신발 완제품 외관 검사 · Part-conditioned Anomaly Detection</span>
+  <div class="gnb__spacer"></div>
+  <a class="gnb__repo" href="https://github.com/jhkim1543/vringon-vision-qa" rel="noopener">GitHub</a>
+  <span class="mode-badge" id="modeBadge">STATIC</span>
+</header>
+
+<section class="kpis" id="kpiStrip"><!-- filled by JS --></section>
+<p class="limit" id="limitNote" hidden></p>
+
+<main class="layout">
+
+  <aside class="gallery">
+    <div class="upload" id="uploadZone">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m0 0L7 9m5-5l5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+      <b>신발 이미지 업로드</b>
+      <span id="uploadHint">로컬 추론 서버 연결 확인 중…</span>
+      <input type="file" id="fileInput" accept="image/*" hidden>
+    </div>
+    <div id="galleryList"><!-- sample groups --></div>
+  </aside>
+
+  <section class="viewer">
+    <div class="viewer__stage" id="stage">
+      <div class="viewer__canvas" id="canvasBox">
+        <img id="imgBase" alt="검사 이미지">
+        <img id="imgParts" class="ovl" alt="">
+        <img id="imgHeat" class="ovl" alt="">
+        <img id="imgGt" class="ovl" alt="">
+        <svg id="boxLayer" class="ovl"></svg>
+      </div>
+    </div>
+    <div class="viewer__bar">
+      <div class="chips" id="layerChips">
+        <button class="chip" data-layer="parts">부위 분할</button>
+        <button class="chip is-on" data-layer="heat">Anomaly Heatmap</button>
+        <button class="chip is-on" data-layer="boxes">결함 박스</button>
+        <button class="chip" data-layer="gt">정답 마스크 (GT)</button>
+      </div>
+      <label class="opacity">
+        불투명도
+        <input type="range" id="opacity" min="20" max="100" value="78">
+      </label>
+    </div>
+    <div class="legend" id="partLegend">
+      <span class="legend__t">부위 색상</span>
+      <i style="--c:#87B1FA">어퍼</i><i style="--c:#8793FF">토</i><i style="--c:#444AE8">칼라</i>
+      <i style="--c:#232BC1">힐</i><i style="--c:#24DD9C">미드솔</i><i style="--c:#008454">아웃솔</i>
+      <i style="--c:#FFAB5C">접착 경계</i>
+    </div>
+  </section>
+
+  <aside class="inspector">
+    <div class="verdict" id="verdictCard">
+      <span class="verdict__label" id="verdictLabel">—</span>
+      <span class="verdict__sub" id="verdictSub"></span>
+    </div>
+    <h3>검출 결과 <span class="count" id="detCount"></span></h3>
+    <div id="detList" class="dets"></div>
+    <h3>정답 대비 (합성 결함)</h3>
+    <div id="gtPanel" class="gtpanel"></div>
+    <h3>부위 분할 비율</h3>
+    <div id="partBars" class="bars"></div>
+    <h3>추론 정보</h3>
+    <div id="infInfo" class="kv"></div>
+  </aside>
+
+</main>
+
+<section class="bench" id="benchSec">
+  <div class="bench__head">
+    <h2>모델 품질 검증</h2>
+    <p>세 가지 조건에서 <b>동일한 엔진</b>을 측정했습니다. ① <b>자유 촬영</b> — 레퍼런스가 같은 SKU의 서로 다른 실물 개체 사진. 히트맵 위치 정확도는 유지되지만 개체·포즈 차이가 결함과 같은 크기라 판정이 성립하지 않습니다. ② <b>고정 리그</b> — 같은 개체를 같은 지그에서 재촬영(미세 회전·배율·노출 드리프트·센서 노이즈·JPEG 재압축)한 것을 레퍼런스로 사용. 판정이 성립합니다. ③ <b>VisA</b> — 통제 촬영된 실제 공장 불량(사람 주석 마스크). 결론은 알고리즘이 아니라 <b>촬영 통제가 전제</b>라는 것입니다.</p>
+  </div>
+  <div class="bench__grid" id="benchGrid"></div>
+  <div class="bench__examples" id="benchExamples"></div>
+</section>
+
+<footer class="pipe">
+  <span class="pipe__t">추론 파이프라인</span>
+  <ol>
+    <li>실루엣 추출</li><li>부위 분할<em>규칙 기반 7영역</em></li>
+    <li>레퍼런스 검색<em>동일 SKU·컬러웨이 Top-8</em></li>
+    <li>PatchCore 이상탐지<em>WideResNet50 · 코어셋 kNN</em></li>
+    <li>부위 조건 결함 분류<em>규칙 엔진</em></li><li>QA 판정<em>PASS · REVIEW · FAIL</em></li>
+  </ol>
+  <span class="pipe__note">데이터: <a href="https://huggingface.co/datasets/ipogorelov/sneakers" rel="noopener">ipogorelov/sneakers</a> (MIT) · <a href="https://github.com/amazon-science/spot-diff" rel="noopener">VisA</a> (CC BY 4.0). 결함 샘플은 부위 인식 기반 합성이며 정답 마스크를 보유합니다. 신발 전용 공개 결함 데이터가 없어 모델 품질 자체는 VisA 실측 불량으로 검증했습니다.</span>
+</footer>
+
+<script src="js/app.js?v=8"></script>
+</body>
+</html>

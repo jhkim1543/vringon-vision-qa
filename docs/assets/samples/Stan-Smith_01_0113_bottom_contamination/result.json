@@ -1,0 +1,116 @@
+{
+ "id": "Stan-Smith_01_0113_bottom_contamination",
+ "w": 349,
+ "h": 199,
+ "sku": "Stan-Smith",
+ "colorway_refs": 5,
+ "kind": "defect",
+ "verdict": "review",
+ "detections": [
+  {
+   "type": "excess_cement",
+   "part": "cement_boundary",
+   "bbox": [
+    43,
+    132,
+    60,
+    20
+   ],
+   "area_pct": 1.475,
+   "z_max": 4.59,
+   "confidence": 0.6,
+   "severity": "minor"
+  },
+  {
+   "type": "upper_contamination",
+   "part": "heel",
+   "bbox": [
+    316,
+    54,
+    20,
+    15
+   ],
+   "area_pct": 0.408,
+   "z_max": 3.81,
+   "confidence": 0.5,
+   "severity": "minor"
+  },
+  {
+   "type": "upper_contamination",
+   "part": "upper",
+   "bbox": [
+    241,
+    102,
+    39,
+    14
+   ],
+   "area_pct": 0.607,
+   "z_max": 3.62,
+   "confidence": 0.45,
+   "severity": "review"
+  },
+  {
+   "type": "upper_contamination",
+   "part": "upper",
+   "bbox": [
+    32,
+    68,
+    14,
+    6
+   ],
+   "area_pct": 0.126,
+   "z_max": 3.56,
+   "confidence": 0.44,
+   "severity": "review"
+  },
+  {
+   "type": "surface_anomaly",
+   "part": "upper",
+   "bbox": [
+    109,
+    42,
+    12,
+    9
+   ],
+   "area_pct": 0.142,
+   "z_max": 3.51,
+   "confidence": 0.42,
+   "severity": "review"
+  },
+  {
+   "type": "upper_contamination",
+   "part": "heel",
+   "bbox": [
+    311,
+    69,
+    24,
+    14
+   ],
+   "area_pct": 0.252,
+   "z_max": 3.41,
+   "confidence": 0.4,
+   "severity": "review"
+  }
+ ],
+ "gt": {
+  "type": "bottom_contamination",
+  "pixel_auroc": 0.9819,
+  "iou": 0.267,
+  "localized": true,
+  "type_match": false
+ },
+ "parts_pct": {
+  "upper": 57.8,
+  "toe": 7.4,
+  "heel": 11.2,
+  "collar": 4.7,
+  "midsole": 8.7,
+  "outsole": 10.7,
+  "cement_boundary": 7.0
+ },
+ "z_mean": 1.33,
+ "z_max": 4.59,
+ "det_thr": 3.81,
+ "t_bank_s": 0.0,
+ "t_infer_s": 5.1
+}

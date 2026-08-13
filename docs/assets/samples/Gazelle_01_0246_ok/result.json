@@ -1,0 +1,110 @@
+{
+ "id": "Gazelle_01_0246_ok",
+ "w": 305,
+ "h": 181,
+ "sku": "Gazelle",
+ "colorway_refs": 3,
+ "kind": "normal",
+ "verdict": "review",
+ "detections": [
+  {
+   "type": "surface_anomaly",
+   "part": "upper",
+   "bbox": [
+    76,
+    93,
+    43,
+    18
+   ],
+   "area_pct": 1.724,
+   "z_max": 4.04,
+   "confidence": 0.74,
+   "severity": "review"
+  },
+  {
+   "type": "surface_anomaly",
+   "part": "upper",
+   "bbox": [
+    130,
+    68,
+    42,
+    34
+   ],
+   "area_pct": 2.869,
+   "z_max": 3.07,
+   "confidence": 0.57,
+   "severity": "review"
+  },
+  {
+   "type": "surface_anomaly",
+   "part": "upper",
+   "bbox": [
+    71,
+    121,
+    22,
+    22
+   ],
+   "area_pct": 0.948,
+   "z_max": 3.04,
+   "confidence": 0.56,
+   "severity": "review"
+  },
+  {
+   "type": "upper_contamination",
+   "part": "heel",
+   "bbox": [
+    244,
+    57,
+    36,
+    18
+   ],
+   "area_pct": 1.047,
+   "z_max": 2.81,
+   "confidence": 0.52,
+   "severity": "minor"
+  },
+  {
+   "type": "loose_thread",
+   "part": "upper",
+   "bbox": [
+    174,
+    36,
+    53,
+    14
+   ],
+   "area_pct": 1.294,
+   "z_max": 2.8,
+   "confidence": 0.52,
+   "severity": "minor"
+  },
+  {
+   "type": "surface_anomaly",
+   "part": "upper",
+   "bbox": [
+    134,
+    102,
+    12,
+    7
+   ],
+   "area_pct": 0.24,
+   "z_max": 2.72,
+   "confidence": 0.5,
+   "severity": "review"
+  }
+ ],
+ "gt": null,
+ "parts_pct": {
+  "upper": 57.0,
+  "toe": 8.1,
+  "heel": 14.4,
+  "collar": 4.7,
+  "midsole": 8.5,
+  "outsole": 10.6,
+  "cement_boundary": 9.8
+ },
+ "z_mean": 1.05,
+ "z_max": 4.03,
+ "det_thr": 2.71,
+ "t_bank_s": 0.0,
+ "t_infer_s": 5.7
+}

@@ -1,0 +1,31 @@
+{
+ "id": "Gazelle_01_0207_loose_thread",
+ "w": 325,
+ "h": 135,
+ "sku": "Gazelle",
+ "colorway_refs": 3,
+ "kind": "defect",
+ "verdict": "pass",
+ "detections": [],
+ "gt": {
+  "type": "loose_thread",
+  "pixel_auroc": 0.9706,
+  "iou": 0.011,
+  "localized": false,
+  "type_match": false
+ },
+ "parts_pct": {
+  "upper": 55.5,
+  "toe": 8.9,
+  "heel": 14.2,
+  "collar": 3.5,
+  "midsole": 8.5,
+  "outsole": 10.5,
+  "cement_boundary": 12.5
+ },
+ "z_mean": -0.33,
+ "z_max": 2.45,
+ "det_thr": 2.75,
+ "t_bank_s": 0.0,
+ "t_infer_s": 4.8
+}

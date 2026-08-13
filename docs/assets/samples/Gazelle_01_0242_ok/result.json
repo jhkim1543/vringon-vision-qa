@@ -1,0 +1,40 @@
+{
+ "id": "Gazelle_01_0242_ok",
+ "w": 377,
+ "h": 157,
+ "sku": "Gazelle",
+ "colorway_refs": 3,
+ "kind": "normal",
+ "verdict": "review",
+ "detections": [
+  {
+   "type": "surface_anomaly",
+   "part": "collar",
+   "bbox": [
+    227,
+    11,
+    34,
+    26
+   ],
+   "area_pct": 1.594,
+   "z_max": 2.58,
+   "confidence": 0.65,
+   "severity": "review"
+  }
+ ],
+ "gt": null,
+ "parts_pct": {
+  "upper": 54.6,
+  "toe": 9.9,
+  "heel": 13.6,
+  "collar": 4.0,
+  "midsole": 8.6,
+  "outsole": 10.5,
+  "cement_boundary": 10.1
+ },
+ "z_mean": 0.03,
+ "z_max": 2.58,
+ "det_thr": 1.99,
+ "t_bank_s": 0.0,
+ "t_infer_s": 4.5
+}

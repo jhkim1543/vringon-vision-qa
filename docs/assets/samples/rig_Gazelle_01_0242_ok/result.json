@@ -1,0 +1,25 @@
+{
+ "id": "rig_Gazelle_01_0242_ok",
+ "w": 377,
+ "h": 157,
+ "sku": "Gazelle",
+ "colorway_refs": 6,
+ "kind": "normal",
+ "verdict": "pass",
+ "detections": [],
+ "gt": null,
+ "parts_pct": {
+  "upper": 55.0,
+  "toe": 9.8,
+  "heel": 13.6,
+  "collar": 3.5,
+  "midsole": 8.6,
+  "outsole": 10.5,
+  "cement_boundary": 10.1
+ },
+ "z_mean": 0.42,
+ "z_max": 8.44,
+ "det_thr": 4.36,
+ "t_bank_s": 0.0,
+ "t_infer_s": 5.5
+}

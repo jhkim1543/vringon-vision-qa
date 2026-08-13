@@ -1,0 +1,46 @@
+{
+ "tracks": {
+  "rig": {
+   "n_samples": 12,
+   "n_defect": 6,
+   "n_normal": 6,
+   "mean_pixel_auroc": 0.9969,
+   "mean_iou": 0.411,
+   "image_auroc": 1.0,
+   "top1_region_is_gt": 1.0,
+   "defect_dominates": 1.0,
+   "type_match_rate": 0.5,
+   "defect_flagged_rate": 1.0,
+   "normal_pass_rate": 1.0,
+   "normal_fail_rate": 0.0
+  },
+  "field": {
+   "n_samples": 20,
+   "n_defect": 10,
+   "n_normal": 10,
+   "mean_pixel_auroc": 0.946,
+   "mean_iou": 0.253,
+   "image_auroc": 0.65,
+   "top1_region_is_gt": 0.556,
+   "defect_dominates": 0.6,
+   "type_match_rate": 0.6,
+   "defect_flagged_rate": 0.9,
+   "normal_pass_rate": 0.3,
+   "normal_fail_rate": 0.0
+  }
+ },
+ "headline_track": "rig",
+ "limitation": "자유 촬영 트랙은 레퍼런스가 동일 SKU의 서로 다른 실물 개체 사진이라 개체·포즈 차이가 결함 신호와 같은 크기입니다. 위치 표시는 유효하지만 PASS/FAIL 자동 판정은 성립하지 않습니다. 같은 엔진을 고정 리그 조건에 두면 판정이 성립하며, 이 대비가 곧 촬영 통제가 전제라는 근거입니다.",
+ "n_samples": 20,
+ "n_defect": 10,
+ "n_normal": 10,
+ "mean_pixel_auroc": 0.946,
+ "mean_iou": 0.253,
+ "image_auroc": 0.65,
+ "top1_region_is_gt": 0.556,
+ "defect_dominates": 0.6,
+ "type_match_rate": 0.6,
+ "defect_flagged_rate": 0.9,
+ "normal_pass_rate": 0.3,
+ "normal_fail_rate": 0.0
+}

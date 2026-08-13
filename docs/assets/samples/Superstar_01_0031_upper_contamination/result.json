@@ -1,0 +1,46 @@
+{
+ "id": "Superstar_01_0031_upper_contamination",
+ "w": 474,
+ "h": 321,
+ "sku": "Superstar",
+ "colorway_refs": 7,
+ "kind": "defect",
+ "verdict": "review",
+ "detections": [
+  {
+   "type": "upper_contamination",
+   "part": "upper",
+   "bbox": [
+    357,
+    91,
+    41,
+    46
+   ],
+   "area_pct": 2.022,
+   "z_max": 2.12,
+   "confidence": 0.62,
+   "severity": "minor"
+  }
+ ],
+ "gt": {
+  "type": "upper_contamination",
+  "pixel_auroc": 0.9992,
+  "iou": 0.77,
+  "localized": true,
+  "type_match": true
+ },
+ "parts_pct": {
+  "upper": 52.4,
+  "toe": 12.7,
+  "heel": 15.8,
+  "collar": 6.8,
+  "midsole": 9.0,
+  "outsole": 11.1,
+  "cement_boundary": 7.1
+ },
+ "z_mean": -0.27,
+ "z_max": 2.13,
+ "det_thr": 1.72,
+ "t_bank_s": 0.0,
+ "t_infer_s": 5.6
+}

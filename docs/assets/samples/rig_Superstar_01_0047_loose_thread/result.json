@@ -1,0 +1,46 @@
+{
+ "id": "rig_Superstar_01_0047_loose_thread",
+ "w": 474,
+ "h": 244,
+ "sku": "Superstar",
+ "colorway_refs": 6,
+ "kind": "defect",
+ "verdict": "fail",
+ "detections": [
+  {
+   "type": "excess_cement",
+   "part": "cement_boundary",
+   "bbox": [
+    334,
+    157,
+    125,
+    65
+   ],
+   "area_pct": 10.48,
+   "z_max": 22.68,
+   "confidence": 0.99,
+   "severity": "major"
+  }
+ ],
+ "gt": {
+  "type": "loose_thread",
+  "pixel_auroc": 0.9966,
+  "iou": 0.156,
+  "localized": true,
+  "type_match": false
+ },
+ "parts_pct": {
+  "upper": 77.6,
+  "toe": 13.8,
+  "heel": 19.9,
+  "collar": 6.5,
+  "midsole": 12.6,
+  "outsole": 15.5,
+  "cement_boundary": 8.1
+ },
+ "z_mean": 2.16,
+ "z_max": 22.68,
+ "det_thr": 6.44,
+ "t_bank_s": 0.0,
+ "t_infer_s": 3.4
+}

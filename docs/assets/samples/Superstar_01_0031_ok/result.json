@@ -1,0 +1,25 @@
+{
+ "id": "Superstar_01_0031_ok",
+ "w": 474,
+ "h": 321,
+ "sku": "Superstar",
+ "colorway_refs": 7,
+ "kind": "normal",
+ "verdict": "pass",
+ "detections": [],
+ "gt": null,
+ "parts_pct": {
+  "upper": 52.4,
+  "toe": 12.7,
+  "heel": 15.8,
+  "collar": 6.8,
+  "midsole": 9.0,
+  "outsole": 11.1,
+  "cement_boundary": 7.1
+ },
+ "z_mean": -0.36,
+ "z_max": 1.25,
+ "det_thr": 1.72,
+ "t_bank_s": 0.0,
+ "t_infer_s": 5.8
+}

@@ -1,0 +1,74 @@
+{
+ "id": "Stan-Smith_01_0154_upper_contamination",
+ "w": 300,
+ "h": 182,
+ "sku": "Stan-Smith",
+ "colorway_refs": 4,
+ "kind": "defect",
+ "verdict": "review",
+ "detections": [
+  {
+   "type": "upper_contamination",
+   "part": "collar",
+   "bbox": [
+    185,
+    12,
+    20,
+    11
+   ],
+   "area_pct": 0.7,
+   "z_max": 3.62,
+   "confidence": 0.58,
+   "severity": "minor"
+  },
+  {
+   "type": "upper_contamination",
+   "part": "collar",
+   "bbox": [
+    164,
+    26,
+    19,
+    8
+   ],
+   "area_pct": 0.354,
+   "z_max": 3.17,
+   "confidence": 0.51,
+   "severity": "minor"
+  },
+  {
+   "type": "upper_contamination",
+   "part": "upper",
+   "bbox": [
+    227,
+    70,
+    17,
+    13
+   ],
+   "area_pct": 0.569,
+   "z_max": 2.76,
+   "confidence": 0.39,
+   "severity": "review"
+  }
+ ],
+ "gt": {
+  "type": "upper_contamination",
+  "pixel_auroc": 0.9793,
+  "iou": 0.175,
+  "localized": true,
+  "type_match": true
+ },
+ "parts_pct": {
+  "upper": 53.5,
+  "toe": 7.3,
+  "heel": 15.7,
+  "collar": 11.5,
+  "midsole": 8.9,
+  "outsole": 10.9,
+  "cement_boundary": 11.0
+ },
+ "z_mean": 0.55,
+ "z_max": 3.62,
+ "det_thr": 3.11,
+ "t_bank_s": 0.0,
+ "t_infer_s": 5.0
+}

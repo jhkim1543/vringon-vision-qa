@@ -1,0 +1,25 @@
+{
+ "id": "rig_Stan-Smith_01_0113_ok",
+ "w": 349,
+ "h": 199,
+ "sku": "Stan-Smith",
+ "colorway_refs": 6,
+ "kind": "normal",
+ "verdict": "pass",
+ "detections": [],
+ "gt": null,
+ "parts_pct": {
+  "upper": 57.7,
+  "toe": 7.6,
+  "heel": 11.0,
+  "collar": 4.9,
+  "midsole": 8.7,
+  "outsole": 10.7,
+  "cement_boundary": 7.1
+ },
+ "z_mean": -0.02,
+ "z_max": 5.82,
+ "det_thr": 4.92,
+ "t_bank_s": 0.0,
+ "t_infer_s": 5.8
+}

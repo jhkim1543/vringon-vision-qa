@@ -1,0 +1,40 @@
+{
+ "id": "Superstar_01_0035_ok",
+ "w": 474,
+ "h": 248,
+ "sku": "Superstar",
+ "colorway_refs": 5,
+ "kind": "normal",
+ "verdict": "review",
+ "detections": [
+  {
+   "type": "loose_thread",
+   "part": "heel",
+   "bbox": [
+    393,
+    111,
+    60,
+    14
+   ],
+   "area_pct": 0.933,
+   "z_max": 1.69,
+   "confidence": 0.52,
+   "severity": "minor"
+  }
+ ],
+ "gt": null,
+ "parts_pct": {
+  "upper": 57.9,
+  "toe": 14.1,
+  "heel": 20.9,
+  "collar": 4.3,
+  "midsole": 10.1,
+  "outsole": 12.5,
+  "cement_boundary": 8.8
+ },
+ "z_mean": -0.39,
+ "z_max": 1.69,
+ "det_thr": 1.64,
+ "t_bank_s": 0.0,
+ "t_infer_s": 5.2
+}

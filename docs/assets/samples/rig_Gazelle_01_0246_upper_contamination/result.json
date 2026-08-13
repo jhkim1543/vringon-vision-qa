@@ -1,0 +1,46 @@
+{
+ "id": "rig_Gazelle_01_0246_upper_contamination",
+ "w": 305,
+ "h": 181,
+ "sku": "Gazelle",
+ "colorway_refs": 6,
+ "kind": "defect",
+ "verdict": "review",
+ "detections": [
+  {
+   "type": "surface_anomaly",
+   "part": "upper",
+   "bbox": [
+    58,
+    108,
+    53,
+    41
+   ],
+   "area_pct": 5.713,
+   "z_max": 11.92,
+   "confidence": 0.99,
+   "severity": "review"
+  }
+ ],
+ "gt": {
+  "type": "upper_contamination",
+  "pixel_auroc": 0.9983,
+  "iou": 0.517,
+  "localized": true,
+  "type_match": false
+ },
+ "parts_pct": {
+  "upper": 57.0,
+  "toe": 8.1,
+  "heel": 14.4,
+  "collar": 4.6,
+  "midsole": 8.5,
+  "outsole": 10.6,
+  "cement_boundary": 9.9
+ },
+ "z_mean": 0.94,
+ "z_max": 11.92,
+ "det_thr": 3.8,
+ "t_bank_s": 0.0,
+ "t_infer_s": 5.1
+}
