@@ -1,5 +1,7 @@
 # VRINGON Vision QA — 신발 완제품 외관 검사 데모
 
+**라이브 데모: https://jhkim1543.github.io/vringon-vision-qa/**
+
 신발 이미지를 업로드하면 **부위 분할 → 컬러웨이 레퍼런스 검색 → PatchCore 이상탐지 → 부위 조건 결함 분류 → QA 판정(PASS/REVIEW/FAIL)** 을 수행하는 데모입니다.
 
 ## 구조

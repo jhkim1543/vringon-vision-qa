@@ -5,5 +5,4 @@ __pycache__/
 *.pyc
 *.log
 # derived heatmaps used only by the offline tuning scripts, not by the site
-docs/assets/samples/*/z.npz
-docs/assets/samples/*/zself.npz
+*.npz
