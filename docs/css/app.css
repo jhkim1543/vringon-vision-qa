@@ -143,8 +143,13 @@ button { font-family: inherit; }
 }
 .viewer__canvas { position: relative; max-width: 100%; }
 .viewer__canvas img { display: block; max-width: 100%; height: auto; border-radius: var(--radius-6); }
-.ovl { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: .78; display: none; }
-.ovl.is-on { display: block; }
+/* must out-specify `.viewer__canvas img` above, or toggling a layer off cannot
+   hide it (0,1,1) beats a bare `.ovl` (0,1,0) */
+.viewer__canvas .ovl {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; opacity: .78; display: none;
+}
+.viewer__canvas .ovl.is-on { display: block; }
 #boxLayer { opacity: 1; }
 #boxLayer rect { fill: none; stroke-width: 2; }
 #boxLayer text { font-family: var(--font-mono); font-size: 11px; font-weight: 600; }

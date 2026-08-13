@@ -137,7 +137,9 @@ function select(id) {
   $("imgParts").src = s.partsUrl || `assets/samples/${s.id}/parts.png`;
   $("imgHeat").src = s.heatUrl || `assets/samples/${s.id}/heat.png`;
   const hasGt = s.gt != null && s.kind === "defect";
-  $("imgGt").src = hasGt ? `assets/samples/${s.id}/gt.png` : "";
+  // src="" would make the browser re-request the page itself as an image
+  if (hasGt) $("imgGt").src = `assets/samples/${s.id}/gt.png`;
+  else $("imgGt").removeAttribute("src");
   document.querySelector('[data-layer="gt"]').style.display = hasGt ? "" : "none";
   renderBoxes(s);
   applyLayers();
