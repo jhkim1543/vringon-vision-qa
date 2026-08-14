@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VRINGON Vision QA · Air Max 90 Lasted Upper 검사항목</title>
+<meta name="description" content="실제 검사 사양서의 11개 검사항목을 부위 계측으로 구현한 데모">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%235D6CFA'/><path d='M8 10l5 12h6l5-12' stroke='%23fff' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css?v=9">
+<link rel="stylesheet" href="css/inspect.css?v=1">
+</head>
+<body>
+
+<header class="gnb">
+  <div class="gnb__brand">
+    <svg class="gnb__mark" viewBox="0 0 60 34" fill="none" aria-hidden="true">
+      <path d="M3 6l11 22h6L31 6" stroke="currentColor" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="45" cy="17" r="10.5" stroke="currentColor" stroke-width="4.4"/>
+    </svg>
+    <span class="gnb__word">VRINGON</span>
+    <span class="gnb__divider"></span>
+    <span class="gnb__app">VISION QA</span>
+  </div>
+  <nav class="tabs">
+    <a class="tab is-on" href="inspect.html">검사항목 계측</a>
+    <a class="tab" href="index.html">외관 이상탐지</a>
+  </nav>
+  <div class="gnb__spacer"></div>
+  <a class="gnb__repo" href="https://github.com/jhkim1543/vringon-vision-qa" rel="noopener">GitHub</a>
+</header>
+
+<section class="specbar">
+  <div class="specbar__l">
+    <h1>Lasted Upper 검사항목 11종</h1>
+    <p id="specSource"></p>
+    <div class="cams" id="camList"></div>
+  </div>
+  <div class="specbar__r" id="rigNote"></div>
+</section>
+
+<p class="limit">
+  <b>측정 단위에 대하여</b> 모든 치수는 <b>부품 자체 기준길이의 ‰(퍼밀)</b>로 보고합니다.
+  보정되지 않은 사진 한 장은 초점거리·물체거리·경사·렌즈왜곡이라는 네 개의 미지수를 분리할 수 없어
+  밀리미터를 만들어낼 수 없습니다. 같은 이미지 안의 두 길이 비(항목 4·5)가 가장 강건하며,
+  실제 라인에서는 스테이션마다 캘리브레이션 타깃으로 mm 환산을 붙이는 것이 정공법입니다.
+</p>
+
+<main class="ilayout">
+  <aside class="igallery" id="gallery"></aside>
+
+  <section class="iviewer">
+    <div class="iviewer__stage"><img id="shot" alt="검사 이미지"></div>
+    <div class="chips" id="layerChips">
+      <button class="chip is-on" data-layer="measure">계측 오버레이</button>
+      <button class="chip" data-layer="image">원본</button>
+    </div>
+    <div class="verdict" id="verdict">
+      <span class="verdict__label" id="verdictLabel">—</span>
+      <span class="verdict__sub" id="verdictSub"></span>
+    </div>
+    <p class="golden" id="goldenNote"></p>
+  </section>
+</main>
+
+<section class="itable">
+  <h2>검사항목별 결과 <span>행을 누르면 원 사양 로직과 구현 방식이 열립니다</span></h2>
+  <table>
+    <thead><tr>
+      <th>#</th><th>검사항목</th><th>카메라</th><th>상태</th>
+      <th>측정값</th><th>허용범위 (골든 ±3σ)</th><th>판정</th>
+    </tr></thead>
+    <tbody id="itemTable"></tbody>
+  </table>
+</section>
+
+<footer class="pipe">
+  <span class="pipe__t">계측 파이프라인</span>
+  <ol>
+    <li>실루엣·부위 분할</li>
+    <li>서브픽셀 윤곽<em>marching squares</em></li>
+    <li>스플라인 곡률<em>변곡점·호장 적분</em></li>
+    <li>선분 검출<em>LSD 시드</em></li>
+    <li>직교거리 회귀<em>ODR + 공분산</em></li>
+    <li>골든 통계<em>중앙값 ± 3σ(MAD)</em></li>
+    <li>가드밴드 판정<em>PASS·REVIEW·FAIL</em></li>
+  </ol>
+  <span class="pipe__note">
+    구현 근거: OpenCV(Apache-2.0) LSD·ECC, scikit-image(BSD) find_contours, SciPy(BSD) ODR·스플라인.
+    파트 분리 후보 조사에서 <b>SAM 3는 채택하지 않았습니다</b> — 메타 독자 라이선스(NOASSERTION)·가중치 게이팅에
+    848M 파라미터로 CPU 8~20초, ONNX 경로가 없어 검사 사이클(1족 2초)에 맞지 않습니다.
+    Apache-2.0인 SAM 2.1 계열을 오프라인 오토라벨 교사로, 경량 학생 모델을 온라인 경로로 두는 구성이 적합합니다.
+  </span>
+</footer>
+
+<script src="js/inspect.js?v=1"></script>
+</body>
+</html>

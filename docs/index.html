@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/app.css?v=9">
+<link rel="stylesheet" href="css/inspect.css?v=1">
 </head>
 <body>
 
@@ -23,7 +24,10 @@
     <span class="gnb__divider"></span>
     <span class="gnb__app">VISION QA</span>
   </div>
-  <span class="gnb__caption">신발 완제품 외관 검사 · Part-conditioned Anomaly Detection</span>
+  <nav class="tabs">
+    <a class="tab" href="inspect.html">검사항목 계측</a>
+    <a class="tab is-on" href="index.html">외관 이상탐지</a>
+  </nav>
   <div class="gnb__spacer"></div>
   <a class="gnb__repo" href="https://github.com/jhkim1543/vringon-vision-qa" rel="noopener">GitHub</a>
   <span class="mode-badge" id="modeBadge">STATIC</span>
