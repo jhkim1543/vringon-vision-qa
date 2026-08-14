@@ -1,0 +1,46 @@
+{
+ "id": "rig_Stan-Smith_01_0157_excess_cement",
+ "w": 360,
+ "h": 227,
+ "sku": "Stan-Smith",
+ "colorway_refs": 6,
+ "kind": "defect",
+ "verdict": "fail",
+ "detections": [
+  {
+   "type": "upper_contamination",
+   "part": "upper",
+   "bbox": [
+    45,
+    178,
+    102,
+    32
+   ],
+   "area_pct": 7.552,
+   "z_max": 17.08,
+   "confidence": 0.99,
+   "severity": "major"
+  }
+ ],
+ "gt": {
+  "type": "excess_cement",
+  "pixel_auroc": 0.9968,
+  "iou": 0.426,
+  "localized": true,
+  "type_match": false
+ },
+ "parts_pct": {
+  "upper": 55.8,
+  "toe": 8.6,
+  "heel": 16.8,
+  "collar": 9.8,
+  "midsole": 9.2,
+  "outsole": 11.3,
+  "cement_boundary": 11.2
+ },
+ "z_mean": 1.63,
+ "z_max": 17.08,
+ "det_thr": 4.45,
+ "t_bank_s": 0.0,
+ "t_infer_s": 6.3
+}

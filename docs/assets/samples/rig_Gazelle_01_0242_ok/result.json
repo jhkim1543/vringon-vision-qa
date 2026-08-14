@@ -5,21 +5,36 @@
  "sku": "Gazelle",
  "colorway_refs": 6,
  "kind": "normal",
- "verdict": "pass",
- "detections": [],
+ "verdict": "fail",
+ "detections": [
+  {
+   "type": "upper_contamination",
+   "part": "collar",
+   "bbox": [
+    202,
+    25,
+    16,
+    9
+   ],
+   "area_pct": 0.354,
+   "z_max": 7.86,
+   "confidence": 0.99,
+   "severity": "major"
+  }
+ ],
  "gt": null,
  "parts_pct": {
-  "upper": 55.0,
+  "upper": 54.5,
   "toe": 9.8,
-  "heel": 13.6,
-  "collar": 3.5,
+  "heel": 13.8,
+  "collar": 4.0,
   "midsole": 8.6,
   "outsole": 10.5,
-  "cement_boundary": 10.1
+  "cement_boundary": 10.2
  },
- "z_mean": 0.42,
- "z_max": 8.44,
- "det_thr": 4.36,
+ "z_mean": 0.38,
+ "z_max": 8.76,
+ "det_thr": 3.51,
  "t_bank_s": 0.0,
- "t_infer_s": 5.5
+ "t_infer_s": 8.0
 }

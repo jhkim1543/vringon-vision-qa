@@ -69,7 +69,18 @@ def main():
     mp = os.path.join(OUT, "manifest.json")
     with open(mp, encoding="utf-8") as f:
         manifest = json.load(f)
-    manifest["samples"] = [recs.get(s["id"], s) for s in manifest["samples"]]
+    # result.json carries no track label, so merging must preserve the one the
+    # manifest already has — otherwise every rig sample silently becomes field
+    merged = []
+    for s in manifest["samples"]:
+        r = recs.get(s["id"])
+        if r is None:
+            merged.append(s)
+            continue
+        r = dict(r)
+        r["track"] = s.get("track", "rig" if s["id"].startswith("rig_") else "field")
+        merged.append(r)
+    manifest["samples"] = merged
     with open(mp, "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=1)
 

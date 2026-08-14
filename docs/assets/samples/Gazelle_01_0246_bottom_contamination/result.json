@@ -8,6 +8,20 @@
  "verdict": "review",
  "detections": [
   {
+   "type": "bottom_contamination",
+   "part": "midsole",
+   "bbox": [
+    113,
+    149,
+    53,
+    18
+   ],
+   "area_pct": 2.439,
+   "z_max": 4.25,
+   "confidence": 0.78,
+   "severity": "minor"
+  },
+  {
    "type": "surface_anomaly",
    "part": "upper",
    "bbox": [
@@ -20,20 +34,6 @@
    "z_max": 4.04,
    "confidence": 0.74,
    "severity": "review"
-  },
-  {
-   "type": "bottom_contamination",
-   "part": "outsole",
-   "bbox": [
-    254,
-    123,
-    28,
-    14
-   ],
-   "area_pct": 1.065,
-   "z_max": 3.55,
-   "confidence": 0.65,
-   "severity": "minor"
   },
   {
    "type": "surface_anomaly",
@@ -58,7 +58,7 @@
     22,
     22
    ],
-   "area_pct": 0.948,
+   "area_pct": 0.941,
    "z_max": 3.04,
    "confidence": 0.56,
    "severity": "review"
@@ -108,8 +108,8 @@
  ],
  "gt": {
   "type": "bottom_contamination",
-  "pixel_auroc": 0.8773,
-  "iou": 0.101,
+  "pixel_auroc": 0.9887,
+  "iou": 0.194,
   "localized": true,
   "type_match": true
  },
@@ -122,9 +122,9 @@
   "outsole": 10.6,
   "cement_boundary": 9.8
  },
- "z_mean": 1.13,
- "z_max": 4.03,
+ "z_mean": 1.19,
+ "z_max": 4.25,
  "det_thr": 2.71,
  "t_bank_s": 0.0,
- "t_infer_s": 5.1
+ "t_infer_s": 4.0
 }

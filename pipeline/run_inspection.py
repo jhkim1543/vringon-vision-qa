@@ -24,6 +24,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from engine import white_bg_mask, crop_align, part_regions
 from inspect_items import inspect
 from spec_airmax90 import ITEMS, BY_ID, CAMERAS, RIG
+from curation import filter_files
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 SKU_DIR = os.path.join(ROOT, "data", "sku")
@@ -31,9 +32,9 @@ OUT = os.path.join(ROOT, "docs", "assets", "inspect")
 
 K_SIGMA = 3.0          # published, chosen — not derived from a spec
 MIN_SIGMA = 2.0        # ‰ floor: never claim a tolerance tighter than this
-TESTS = {
+TESTS = {                       # verified single-shoe photographs only
     "Superstar": ["01_0031", "01_0035", "01_0047"],
-    "Stan-Smith": ["01_0113", "01_0124", "01_0154"],
+    "Stan-Smith": ["01_0147", "01_0157", "01_0154"],
     "Gazelle": ["01_0207", "01_0242", "01_0246"],
 }
 
@@ -54,7 +55,7 @@ def measure(path):
 def golden_stats(sku, exclude):
     """Centre and robust spread per item, from the rest of the style's library."""
     vals = {}
-    files = [f for f in sorted(glob.glob(os.path.join(SKU_DIR, sku, "*.jpg")))
+    files = [f for f in filter_files(sku, sorted(glob.glob(os.path.join(SKU_DIR, sku, "*.jpg"))))
              if os.path.splitext(os.path.basename(f))[0] not in exclude]
     used = 0
     for f in files:

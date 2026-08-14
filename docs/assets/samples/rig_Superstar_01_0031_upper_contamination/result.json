@@ -16,7 +16,7 @@
     110,
     83
    ],
-   "area_pct": 8.87,
+   "area_pct": 8.871,
    "z_max": 18.33,
    "confidence": 0.99,
    "severity": "major"
@@ -42,5 +42,5 @@
  "z_max": 18.33,
  "det_thr": 5.35,
  "t_bank_s": 0.0,
- "t_infer_s": 3.2
+ "t_infer_s": 6.4
 }

@@ -11,36 +11,36 @@
    "type": "surface_anomaly",
    "part": "upper",
    "bbox": [
-    58,
-    108,
-    53,
-    41
+    122,
+    97,
+    61,
+    44
    ],
-   "area_pct": 5.713,
-   "z_max": 11.92,
+   "area_pct": 6.758,
+   "z_max": 14.13,
    "confidence": 0.99,
    "severity": "review"
   }
  ],
  "gt": {
   "type": "upper_contamination",
-  "pixel_auroc": 0.9983,
-  "iou": 0.517,
+  "pixel_auroc": 0.9988,
+  "iou": 0.397,
   "localized": true,
   "type_match": false
  },
  "parts_pct": {
-  "upper": 57.0,
-  "toe": 8.1,
-  "heel": 14.4,
-  "collar": 4.6,
+  "upper": 56.9,
+  "toe": 8.2,
+  "heel": 14.5,
+  "collar": 4.7,
   "midsole": 8.5,
-  "outsole": 10.6,
-  "cement_boundary": 9.9
+  "outsole": 10.5,
+  "cement_boundary": 9.8
  },
- "z_mean": 0.94,
- "z_max": 11.92,
- "det_thr": 3.8,
+ "z_mean": 1.24,
+ "z_max": 14.13,
+ "det_thr": 3.84,
  "t_bank_s": 0.0,
- "t_infer_s": 5.1
+ "t_infer_s": 7.3
 }

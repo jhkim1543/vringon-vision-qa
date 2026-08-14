@@ -12,7 +12,7 @@
   "n_not_sensed": 4,
   "bottom_line_rms": 1.89
  },
- "verdict": "REVIEW",
+ "verdict": "FAIL",
  "items": [
   {
    "item_id": "tip_length",
@@ -154,12 +154,12 @@
     ]
    },
    "note": "측면 투영 호장입니다. 정면에서 가려지는 구간을 3D로 중합하는 원 사양과 달리 단축(foreshortening)을 풀 수 없어 참값이 아니며, 골든 대비 상대 비교로만 사용합니다.",
-   "nominal": 746.21,
-   "sigma": 97.93,
-   "golden_n": 7,
-   "tol_lower": 452.42,
-   "tol_upper": 1040.0,
-   "deviation": -118.19,
+   "nominal": 768.06,
+   "sigma": 49.24,
+   "golden_n": 5,
+   "tol_lower": 620.34,
+   "tol_upper": 915.78,
+   "deviation": -140.04,
    "verdict": "PASS"
   },
   {
@@ -192,12 +192,12 @@
     ]
    },
    "note": "측면 뷰 기준 '팁~스로트' 거리입니다. 원 사양의 정면 Tip Center와는 다른 양이므로 같은 이름으로 비교하면 안 됩니다.",
-   "nominal": 693.67,
-   "sigma": 57.35,
-   "golden_n": 7,
-   "tol_lower": 521.62,
-   "tol_upper": 865.72,
-   "deviation": 7.52,
+   "nominal": 683.54,
+   "sigma": 104.69,
+   "golden_n": 5,
+   "tol_lower": 369.47,
+   "tol_upper": 997.61,
+   "deviation": 17.65,
    "verdict": "PASS"
   },
   {
@@ -257,12 +257,12 @@
     "n_pts": 649
    },
    "note": "동일 이미지 내 두 평행 근사선의 수직 간격이라 스케일에 가장 강건한 항목입니다.",
-   "nominal": 97.58,
-   "sigma": 10.29,
-   "golden_n": 7,
-   "tol_lower": 66.71,
-   "tol_upper": 128.45,
-   "deviation": -16.92,
+   "nominal": 99.9,
+   "sigma": 13.73,
+   "golden_n": 5,
+   "tol_lower": 58.71,
+   "tol_upper": 141.09,
+   "deviation": -19.24,
    "verdict": "PASS"
   },
   {
@@ -298,12 +298,12 @@
     "n_pts": 331
    },
    "note": "동일 이미지 내 두 평행 근사선의 수직 간격이라 스케일에 가장 강건한 항목입니다.",
-   "nominal": 110.41,
-   "sigma": 33.45,
-   "golden_n": 7,
-   "tol_lower": 10.06,
-   "tol_upper": 210.76,
-   "deviation": 4.1,
+   "nominal": 87.85,
+   "sigma": 25.46,
+   "golden_n": 5,
+   "tol_lower": 11.47,
+   "tol_upper": 164.23,
+   "deviation": 26.66,
    "verdict": "PASS"
   },
   {
@@ -335,13 +335,13 @@
     ]
    },
    "note": "측면 실루엣 기준 힐 프로파일 높이입니다. 원 사양은 후면(CAM4) 중심선에서 재는 항목이라 동일 값이 아닙니다.",
-   "nominal": 436.67,
-   "sigma": 18.01,
-   "golden_n": 7,
-   "tol_lower": 382.64,
-   "tol_upper": 490.7,
-   "deviation": 62.2,
-   "verdict": "REVIEW"
+   "nominal": 435.19,
+   "sigma": 4.2,
+   "golden_n": 5,
+   "tol_lower": 422.59,
+   "tol_upper": 447.79,
+   "deviation": 63.68,
+   "verdict": "FAIL"
   },
   {
    "item_id": "heel_overlay",
@@ -380,12 +380,12 @@
     ]
    },
    "note": "측면 뷰에서 근사한 값입니다. 원 사양은 후면(CAM4) + 사전 원근 변조를 전제로 하며, 두 사선 교점은 평행에 가까울수록 급격히 불안정해집니다.",
-   "nominal": 155.08,
-   "sigma": 114.89,
-   "golden_n": 7,
+   "nominal": 163.41,
+   "sigma": 129.45,
+   "golden_n": 5,
    "tol_lower": 0.0,
-   "tol_upper": 499.75,
-   "deviation": -40.85,
+   "tol_upper": 551.76,
+   "deviation": -49.18,
    "verdict": "PASS"
   },
   {
@@ -456,12 +456,12 @@
     "texture_energy": 104.48
    },
    "note": "정반사 화소 비율과 텍스처 에너지로 계산한 검사 여력입니다. 벤더 지적대로 색상보다 재질(광택·엠보싱)이 지배적입니다.",
-   "nominal": 45.9,
-   "sigma": 2.22,
-   "golden_n": 7,
-   "tol_lower": 39.24,
-   "tol_upper": 52.56,
-   "deviation": -3.7,
+   "nominal": 46.8,
+   "sigma": 2.0,
+   "golden_n": 5,
+   "tol_lower": 40.8,
+   "tol_upper": 52.8,
+   "deviation": -4.6,
    "verdict": "PASS"
   },
   {

@@ -3,7 +3,7 @@
  "w": 474,
  "h": 321,
  "sku": "Superstar",
- "colorway_refs": 7,
+ "colorway_refs": 4,
  "kind": "defect",
  "verdict": "review",
  "detections": [
@@ -11,21 +11,21 @@
    "type": "upper_contamination",
    "part": "upper",
    "bbox": [
-    357,
-    91,
+    358,
+    90,
     41,
-    46
+    49
    ],
-   "area_pct": 2.022,
-   "z_max": 2.12,
-   "confidence": 0.62,
+   "area_pct": 2.27,
+   "z_max": 2.11,
+   "confidence": 0.63,
    "severity": "minor"
   }
  ],
  "gt": {
   "type": "upper_contamination",
-  "pixel_auroc": 0.9992,
-  "iou": 0.77,
+  "pixel_auroc": 0.9984,
+  "iou": 0.799,
   "localized": true,
   "type_match": true
  },
@@ -38,9 +38,9 @@
   "outsole": 11.1,
   "cement_boundary": 7.1
  },
- "z_mean": -0.27,
- "z_max": 2.13,
- "det_thr": 1.72,
+ "z_mean": 0.06,
+ "z_max": 2.11,
+ "det_thr": 1.67,
  "t_bank_s": 0.0,
- "t_infer_s": 5.6
+ "t_infer_s": 5.0
 }

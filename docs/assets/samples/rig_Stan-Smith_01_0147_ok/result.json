@@ -1,0 +1,54 @@
+{
+ "id": "rig_Stan-Smith_01_0147_ok",
+ "w": 369,
+ "h": 244,
+ "sku": "Stan-Smith",
+ "colorway_refs": 6,
+ "kind": "normal",
+ "verdict": "review",
+ "detections": [
+  {
+   "type": "surface_anomaly",
+   "part": "heel",
+   "bbox": [
+    356,
+    156,
+    13,
+    9
+   ],
+   "area_pct": 0.203,
+   "z_max": 5.35,
+   "confidence": 0.67,
+   "severity": "review"
+  },
+  {
+   "type": "surface_anomaly",
+   "part": "outsole",
+   "bbox": [
+    350,
+    180,
+    8,
+    12
+   ],
+   "area_pct": 0.161,
+   "z_max": 4.18,
+   "confidence": 0.52,
+   "severity": "review"
+  }
+ ],
+ "gt": null,
+ "parts_pct": {
+  "upper": 53.9,
+  "toe": 7.1,
+  "heel": 17.7,
+  "collar": 14.4,
+  "midsole": 9.6,
+  "outsole": 11.7,
+  "cement_boundary": 8.5
+ },
+ "z_mean": 0.44,
+ "z_max": 7.81,
+ "det_thr": 4.02,
+ "t_bank_s": 0.0,
+ "t_infer_s": 8.2
+}

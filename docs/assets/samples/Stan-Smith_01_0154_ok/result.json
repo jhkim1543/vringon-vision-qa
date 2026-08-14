@@ -3,7 +3,7 @@
  "w": 300,
  "h": 182,
  "sku": "Stan-Smith",
- "colorway_refs": 4,
+ "colorway_refs": 3,
  "kind": "normal",
  "verdict": "review",
  "detections": [
@@ -11,29 +11,29 @@
    "type": "upper_contamination",
    "part": "collar",
    "bbox": [
-    185,
+    171,
+    25,
     12,
-    20,
-    11
+    9
    ],
-   "area_pct": 0.7,
-   "z_max": 3.62,
-   "confidence": 0.58,
-   "severity": "minor"
+   "area_pct": 0.263,
+   "z_max": 4.33,
+   "confidence": 0.48,
+   "severity": "review"
   },
   {
    "type": "upper_contamination",
    "part": "collar",
    "bbox": [
-    164,
-    26,
-    19,
+    185,
+    15,
+    20,
     8
    ],
-   "area_pct": 0.354,
-   "z_max": 3.17,
-   "confidence": 0.51,
-   "severity": "minor"
+   "area_pct": 0.454,
+   "z_max": 4.29,
+   "confidence": 0.47,
+   "severity": "review"
   }
  ],
  "gt": null,
@@ -46,9 +46,9 @@
   "outsole": 10.9,
   "cement_boundary": 11.0
  },
- "z_mean": 0.43,
- "z_max": 3.62,
- "det_thr": 3.11,
+ "z_mean": 1.1,
+ "z_max": 4.33,
+ "det_thr": 4.43,
  "t_bank_s": 0.0,
- "t_infer_s": 4.9
+ "t_infer_s": 5.1
 }

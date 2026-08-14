@@ -5,22 +5,8 @@
  "sku": "Gazelle",
  "colorway_refs": 3,
  "kind": "defect",
- "verdict": "fail",
+ "verdict": "review",
  "detections": [
-  {
-   "type": "toe_scuff",
-   "part": "toe",
-   "bbox": [
-    18,
-    105,
-    59,
-    31
-   ],
-   "area_pct": 4.012,
-   "z_max": 3.36,
-   "confidence": 0.84,
-   "severity": "major"
-  },
   {
    "type": "surface_anomaly",
    "part": "collar",
@@ -34,14 +20,28 @@
    "z_max": 2.58,
    "confidence": 0.65,
    "severity": "review"
+  },
+  {
+   "type": "surface_anomaly",
+   "part": "toe",
+   "bbox": [
+    49,
+    88,
+    38,
+    24
+   ],
+   "area_pct": 1.932,
+   "z_max": 2.55,
+   "confidence": 0.64,
+   "severity": "review"
   }
  ],
  "gt": {
   "type": "toe_scuff",
-  "pixel_auroc": 0.9724,
-  "iou": 0.468,
+  "pixel_auroc": 0.977,
+  "iou": 0.42,
   "localized": true,
-  "type_match": true
+  "type_match": false
  },
  "parts_pct": {
   "upper": 54.6,
@@ -52,9 +52,9 @@
   "outsole": 10.5,
   "cement_boundary": 10.1
  },
- "z_mean": 0.16,
- "z_max": 3.36,
+ "z_mean": 0.13,
+ "z_max": 2.58,
  "det_thr": 1.99,
  "t_bank_s": 0.0,
- "t_infer_s": 4.6
+ "t_infer_s": 5.6
 }

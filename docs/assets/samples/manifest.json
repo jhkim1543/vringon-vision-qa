@@ -5,7 +5,7 @@
    "w": 474,
    "h": 321,
    "sku": "Superstar",
-   "colorway_refs": 7,
+   "colorway_refs": 4,
    "kind": "normal",
    "verdict": "pass",
    "detections": [],
@@ -19,9 +19,9 @@
     "outsole": 11.1,
     "cement_boundary": 7.1
    },
-   "z_mean": -0.36,
-   "z_max": 1.25,
-   "det_thr": 1.72,
+   "z_mean": -0.02,
+   "z_max": 1.38,
+   "det_thr": 1.67,
    "t_bank_s": 0.0,
    "t_infer_s": 5.8,
    "track": "field"
@@ -31,7 +31,7 @@
    "w": 474,
    "h": 321,
    "sku": "Superstar",
-   "colorway_refs": 7,
+   "colorway_refs": 4,
    "kind": "defect",
    "verdict": "review",
    "detections": [
@@ -39,21 +39,21 @@
      "type": "upper_contamination",
      "part": "upper",
      "bbox": [
-      357,
-      91,
+      358,
+      90,
       41,
-      46
+      49
      ],
-     "area_pct": 2.022,
-     "z_max": 2.12,
-     "confidence": 0.62,
+     "area_pct": 2.27,
+     "z_max": 2.11,
+     "confidence": 0.63,
      "severity": "minor"
     }
    ],
    "gt": {
     "type": "upper_contamination",
-    "pixel_auroc": 0.9992,
-    "iou": 0.77,
+    "pixel_auroc": 0.9984,
+    "iou": 0.799,
     "localized": true,
     "type_match": true
    },
@@ -66,11 +66,11 @@
     "outsole": 11.1,
     "cement_boundary": 7.1
    },
-   "z_mean": -0.27,
-   "z_max": 2.13,
-   "det_thr": 1.72,
+   "z_mean": 0.06,
+   "z_max": 2.11,
+   "det_thr": 1.67,
    "t_bank_s": 0.0,
-   "t_infer_s": 5.6,
+   "t_infer_s": 5.0,
    "track": "field"
   },
   {
@@ -111,7 +111,7 @@
    "z_max": 1.69,
    "det_thr": 1.64,
    "t_bank_s": 0.0,
-   "t_infer_s": 5.2,
+   "t_infer_s": 5.9,
    "track": "field"
   },
   {
@@ -186,7 +186,7 @@
    "z_max": 1.69,
    "det_thr": 1.64,
    "t_bank_s": 0.0,
-   "t_infer_s": 5.0,
+   "t_infer_s": 6.4,
    "track": "field"
   },
   {
@@ -194,7 +194,7 @@
    "w": 474,
    "h": 244,
    "sku": "Superstar",
-   "colorway_refs": 7,
+   "colorway_refs": 4,
    "kind": "normal",
    "verdict": "review",
    "detections": [
@@ -202,57 +202,43 @@
      "type": "upper_contamination",
      "part": "heel",
      "bbox": [
-      407,
-      79,
-      62,
-      36
+      415,
+      84,
+      52,
+      23
      ],
-     "area_pct": 2.199,
-     "z_max": 2.48,
-     "confidence": 0.84,
+     "area_pct": 1.393,
+     "z_max": 2.16,
+     "confidence": 0.62,
      "severity": "minor"
     },
     {
      "type": "upper_contamination",
      "part": "collar",
      "bbox": [
-      224,
-      31,
-      60,
-      32
+      228,
+      32,
+      56,
+      29
      ],
-     "area_pct": 2.363,
-     "z_max": 2.16,
-     "confidence": 0.73,
+     "area_pct": 2.006,
+     "z_max": 2.09,
+     "confidence": 0.6,
      "severity": "minor"
     },
     {
      "type": "upper_contamination",
      "part": "upper",
      "bbox": [
-      335,
-      70,
-      47,
-      27
+      349,
+      73,
+      27,
+      23
      ],
-     "area_pct": 1.863,
-     "z_max": 2.05,
-     "confidence": 0.69,
+     "area_pct": 0.945,
+     "z_max": 1.75,
+     "confidence": 0.5,
      "severity": "minor"
-    },
-    {
-     "type": "surface_anomaly",
-     "part": "heel",
-     "bbox": [
-      429,
-      145,
-      19,
-      18
-     ],
-     "area_pct": 0.466,
-     "z_max": 1.54,
-     "confidence": 0.52,
-     "severity": "review"
     }
    ],
    "gt": null,
@@ -265,11 +251,11 @@
     "outsole": 15.5,
     "cement_boundary": 8.2
    },
-   "z_mean": -0.22,
-   "z_max": 2.48,
-   "det_thr": 1.48,
+   "z_mean": -0.0,
+   "z_max": 2.16,
+   "det_thr": 1.74,
    "t_bank_s": 0.0,
-   "t_infer_s": 5.8,
+   "t_infer_s": 6.4,
    "track": "field"
   },
   {
@@ -277,7 +263,7 @@
    "w": 474,
    "h": 244,
    "sku": "Superstar",
-   "colorway_refs": 7,
+   "colorway_refs": 4,
    "kind": "defect",
    "verdict": "review",
    "detections": [
@@ -285,77 +271,63 @@
      "type": "upper_contamination",
      "part": "upper",
      "bbox": [
-      162,
-      66,
-      38,
-      38
+      169,
+      65,
+      29,
+      25
      ],
-     "area_pct": 1.417,
-     "z_max": 2.62,
-     "confidence": 0.89,
+     "area_pct": 0.923,
+     "z_max": 2.84,
+     "confidence": 0.82,
      "severity": "minor"
     },
     {
      "type": "upper_contamination",
      "part": "heel",
      "bbox": [
-      407,
-      79,
-      62,
-      36
+      415,
+      84,
+      52,
+      23
      ],
-     "area_pct": 2.199,
-     "z_max": 2.48,
-     "confidence": 0.84,
+     "area_pct": 1.393,
+     "z_max": 2.16,
+     "confidence": 0.62,
      "severity": "minor"
     },
     {
      "type": "upper_contamination",
      "part": "collar",
      "bbox": [
-      224,
-      31,
-      60,
-      32
+      228,
+      32,
+      56,
+      29
      ],
-     "area_pct": 2.363,
-     "z_max": 2.16,
-     "confidence": 0.73,
+     "area_pct": 2.02,
+     "z_max": 2.09,
+     "confidence": 0.6,
      "severity": "minor"
     },
     {
      "type": "upper_contamination",
      "part": "upper",
      "bbox": [
-      335,
-      70,
-      47,
-      27
+      349,
+      73,
+      27,
+      23
      ],
-     "area_pct": 1.863,
-     "z_max": 2.05,
-     "confidence": 0.69,
+     "area_pct": 0.945,
+     "z_max": 1.75,
+     "confidence": 0.5,
      "severity": "minor"
-    },
-    {
-     "type": "surface_anomaly",
-     "part": "heel",
-     "bbox": [
-      429,
-      145,
-      19,
-      18
-     ],
-     "area_pct": 0.466,
-     "z_max": 1.54,
-     "confidence": 0.52,
-     "severity": "review"
     }
    ],
    "gt": {
     "type": "loose_thread",
-    "pixel_auroc": 0.9458,
-    "iou": 0.116,
+    "pixel_auroc": 0.9597,
+    "iou": 0.12,
     "localized": true,
     "type_match": false
    },
@@ -368,11 +340,11 @@
     "outsole": 15.5,
     "cement_boundary": 8.2
    },
-   "z_mean": -0.17,
-   "z_max": 2.62,
-   "det_thr": 1.48,
+   "z_mean": 0.05,
+   "z_max": 2.84,
+   "det_thr": 1.74,
    "t_bank_s": 0.0,
-   "t_infer_s": 5.7,
+   "t_infer_s": 5.8,
    "track": "field"
   },
   {
@@ -382,8 +354,65 @@
    "sku": "Superstar",
    "colorway_refs": 3,
    "kind": "normal",
-   "verdict": "pass",
-   "detections": [],
+   "verdict": "review",
+   "detections": [
+    {
+     "type": "surface_anomaly",
+     "part": "upper",
+     "bbox": [
+      106,
+      10,
+      181,
+      64
+     ],
+     "area_pct": 12.742,
+     "z_max": 3.98,
+     "confidence": 0.6,
+     "severity": "review"
+    },
+    {
+     "type": "surface_anomaly",
+     "part": "upper",
+     "bbox": [
+      174,
+      103,
+      16,
+      6
+     ],
+     "area_pct": 0.313,
+     "z_max": 2.99,
+     "confidence": 0.41,
+     "severity": "review"
+    },
+    {
+     "type": "surface_anomaly",
+     "part": "toe",
+     "bbox": [
+      61,
+      87,
+      12,
+      9
+     ],
+     "area_pct": 0.31,
+     "z_max": 2.95,
+     "confidence": 0.39,
+     "severity": "review"
+    },
+    {
+     "type": "surface_anomaly",
+     "part": "heel",
+     "bbox": [
+      290,
+      92,
+      10,
+      21
+     ],
+     "area_pct": 0.385,
+     "z_max": 2.94,
+     "confidence": 0.39,
+     "severity": "review"
+    }
+   ],
    "gt": null,
    "parts_pct": {
     "upper": 52.8,
@@ -394,11 +423,11 @@
     "outsole": 10.4,
     "cement_boundary": 10.5
    },
-   "z_mean": 0.1,
-   "z_max": 1.97,
-   "det_thr": 2.69,
+   "z_mean": 1.85,
+   "z_max": 3.98,
+   "det_thr": 3.3,
    "t_bank_s": 0.0,
-   "t_infer_s": 4.3,
+   "t_infer_s": 5.3,
    "track": "field"
   },
   {
@@ -408,27 +437,69 @@
    "sku": "Superstar",
    "colorway_refs": 3,
    "kind": "defect",
-   "verdict": "review",
+   "verdict": "fail",
    "detections": [
     {
      "type": "toe_scuff",
      "part": "toe",
      "bbox": [
-      40,
-      84,
-      22,
-      7
+      25,
+      65,
+      73,
+      34
      ],
-     "area_pct": 0.272,
-     "z_max": 2.31,
-     "confidence": 0.36,
+     "area_pct": 4.678,
+     "z_max": 4.21,
+     "confidence": 0.64,
+     "severity": "major"
+    },
+    {
+     "type": "surface_anomaly",
+     "part": "upper",
+     "bbox": [
+      101,
+      10,
+      186,
+      66
+     ],
+     "area_pct": 13.164,
+     "z_max": 3.98,
+     "confidence": 0.6,
+     "severity": "review"
+    },
+    {
+     "type": "surface_anomaly",
+     "part": "upper",
+     "bbox": [
+      174,
+      103,
+      16,
+      6
+     ],
+     "area_pct": 0.313,
+     "z_max": 2.99,
+     "confidence": 0.41,
+     "severity": "review"
+    },
+    {
+     "type": "surface_anomaly",
+     "part": "heel",
+     "bbox": [
+      290,
+      92,
+      10,
+      21
+     ],
+     "area_pct": 0.385,
+     "z_max": 2.94,
+     "confidence": 0.39,
      "severity": "review"
     }
    ],
    "gt": {
     "type": "toe_scuff",
-    "pixel_auroc": 0.8997,
-    "iou": 0.073,
+    "pixel_auroc": 0.941,
+    "iou": 0.148,
     "localized": true,
     "type_match": true
    },
@@ -441,19 +512,19 @@
     "outsole": 10.4,
     "cement_boundary": 10.5
    },
-   "z_mean": 0.16,
-   "z_max": 2.32,
-   "det_thr": 2.69,
+   "z_mean": 1.92,
+   "z_max": 4.21,
+   "det_thr": 3.3,
    "t_bank_s": 0.0,
-   "t_infer_s": 4.4,
+   "t_infer_s": 5.6,
    "track": "field"
   },
   {
-   "id": "Stan-Smith_01_0113_ok",
-   "w": 349,
-   "h": 199,
+   "id": "Stan-Smith_01_0147_ok",
+   "w": 369,
+   "h": 244,
    "sku": "Stan-Smith",
-   "colorway_refs": 5,
+   "colorway_refs": 3,
    "kind": "normal",
    "verdict": "review",
    "detections": [
@@ -461,96 +532,142 @@
      "type": "upper_contamination",
      "part": "heel",
      "bbox": [
-      316,
-      54,
+      335,
       20,
-      15
+      10,
+      10
      ],
-     "area_pct": 0.408,
-     "z_max": 3.81,
-     "confidence": 0.5,
-     "severity": "minor"
-    },
-    {
-     "type": "upper_contamination",
-     "part": "upper",
-     "bbox": [
-      241,
-      102,
-      39,
-      14
-     ],
-     "area_pct": 0.607,
-     "z_max": 3.62,
-     "confidence": 0.45,
-     "severity": "review"
-    },
-    {
-     "type": "upper_contamination",
-     "part": "upper",
-     "bbox": [
-      32,
-      68,
-      14,
-      6
-     ],
-     "area_pct": 0.126,
-     "z_max": 3.56,
-     "confidence": 0.44,
-     "severity": "review"
-    },
-    {
-     "type": "surface_anomaly",
-     "part": "upper",
-     "bbox": [
-      109,
-      42,
-      12,
-      9
-     ],
-     "area_pct": 0.142,
-     "z_max": 3.51,
-     "confidence": 0.42,
-     "severity": "review"
-    },
-    {
-     "type": "upper_contamination",
-     "part": "heel",
-     "bbox": [
-      311,
-      69,
-      24,
-      14
-     ],
-     "area_pct": 0.252,
-     "z_max": 3.41,
-     "confidence": 0.4,
+     "area_pct": 0.188,
+     "z_max": 3.67,
+     "confidence": 0.43,
      "severity": "review"
     }
    ],
    "gt": null,
    "parts_pct": {
-    "upper": 57.8,
-    "toe": 7.4,
-    "heel": 11.2,
-    "collar": 4.7,
-    "midsole": 8.7,
-    "outsole": 10.7,
-    "cement_boundary": 7.0
+    "upper": 54.1,
+    "toe": 7.1,
+    "heel": 17.7,
+    "collar": 13.9,
+    "midsole": 9.6,
+    "outsole": 11.7,
+    "cement_boundary": 8.4
    },
-   "z_mean": 1.25,
-   "z_max": 3.81,
-   "det_thr": 3.81,
+   "z_mean": 0.58,
+   "z_max": 3.67,
+   "det_thr": 3.95,
    "t_bank_s": 0.0,
-   "t_infer_s": 4.9,
+   "t_infer_s": 5.5,
    "track": "field"
   },
   {
-   "id": "Stan-Smith_01_0113_bottom_contamination",
-   "w": 349,
-   "h": 199,
+   "id": "Stan-Smith_01_0147_bottom_contamination",
+   "w": 369,
+   "h": 244,
    "sku": "Stan-Smith",
-   "colorway_refs": 5,
+   "colorway_refs": 3,
+   "kind": "defect",
+   "verdict": "review",
+   "detections": [
+    {
+     "type": "upper_contamination",
+     "part": "heel",
+     "bbox": [
+      335,
+      20,
+      10,
+      10
+     ],
+     "area_pct": 0.188,
+     "z_max": 3.67,
+     "confidence": 0.43,
+     "severity": "review"
+    },
+    {
+     "type": "excess_cement",
+     "part": "cement_boundary",
+     "bbox": [
+      256,
+      180,
+      38,
+      15
+     ],
+     "area_pct": 0.651,
+     "z_max": 3.62,
+     "confidence": 0.42,
+     "severity": "review"
+    }
+   ],
+   "gt": {
+    "type": "bottom_contamination",
+    "pixel_auroc": 0.981,
+    "iou": 0.315,
+    "localized": true,
+    "type_match": false
+   },
+   "parts_pct": {
+    "upper": 54.1,
+    "toe": 7.1,
+    "heel": 17.7,
+    "collar": 13.9,
+    "midsole": 9.6,
+    "outsole": 11.7,
+    "cement_boundary": 8.4
+   },
+   "z_mean": 0.72,
+   "z_max": 3.67,
+   "det_thr": 3.95,
+   "t_bank_s": 0.0,
+   "t_infer_s": 5.4,
+   "track": "field"
+  },
+  {
+   "id": "Stan-Smith_01_0157_ok",
+   "w": 360,
+   "h": 227,
+   "sku": "Stan-Smith",
+   "colorway_refs": 3,
+   "kind": "normal",
+   "verdict": "review",
+   "detections": [
+    {
+     "type": "excess_cement",
+     "part": "cement_boundary",
+     "bbox": [
+      35,
+      199,
+      20,
+      9
+     ],
+     "area_pct": 0.414,
+     "z_max": 3.37,
+     "confidence": 0.5,
+     "severity": "review"
+    }
+   ],
+   "gt": null,
+   "parts_pct": {
+    "upper": 55.9,
+    "toe": 8.5,
+    "heel": 16.8,
+    "collar": 9.9,
+    "midsole": 9.2,
+    "outsole": 11.3,
+    "cement_boundary": 11.2
+   },
+   "z_mean": -0.04,
+   "z_max": 3.37,
+   "det_thr": 3.38,
+   "t_bank_s": 0.0,
+   "t_infer_s": 5.5,
+   "track": "field"
+  },
+  {
+   "id": "Stan-Smith_01_0157_excess_cement",
+   "w": 360,
+   "h": 227,
+   "sku": "Stan-Smith",
+   "colorway_refs": 3,
    "kind": "defect",
    "verdict": "review",
    "detections": [
@@ -558,308 +675,52 @@
      "type": "excess_cement",
      "part": "cement_boundary",
      "bbox": [
-      43,
-      132,
-      60,
-      20
+      128,
+      197,
+      22,
+      11
      ],
-     "area_pct": 1.475,
-     "z_max": 4.59,
-     "confidence": 0.6,
+     "area_pct": 0.5,
+     "z_max": 3.78,
+     "confidence": 0.56,
      "severity": "minor"
     },
     {
-     "type": "upper_contamination",
-     "part": "heel",
+     "type": "excess_cement",
+     "part": "cement_boundary",
      "bbox": [
-      316,
-      54,
-      20,
-      15
-     ],
-     "area_pct": 0.408,
-     "z_max": 3.81,
-     "confidence": 0.5,
-     "severity": "minor"
-    },
-    {
-     "type": "upper_contamination",
-     "part": "upper",
-     "bbox": [
-      241,
-      102,
-      39,
-      14
-     ],
-     "area_pct": 0.607,
-     "z_max": 3.62,
-     "confidence": 0.45,
-     "severity": "review"
-    },
-    {
-     "type": "upper_contamination",
-     "part": "upper",
-     "bbox": [
-      32,
-      68,
-      14,
-      6
-     ],
-     "area_pct": 0.126,
-     "z_max": 3.56,
-     "confidence": 0.44,
-     "severity": "review"
-    },
-    {
-     "type": "surface_anomaly",
-     "part": "upper",
-     "bbox": [
-      109,
-      42,
-      12,
-      9
-     ],
-     "area_pct": 0.142,
-     "z_max": 3.51,
-     "confidence": 0.42,
-     "severity": "review"
-    },
-    {
-     "type": "upper_contamination",
-     "part": "heel",
-     "bbox": [
-      311,
-      69,
-      24,
-      14
-     ],
-     "area_pct": 0.252,
-     "z_max": 3.41,
-     "confidence": 0.4,
-     "severity": "review"
-    }
-   ],
-   "gt": {
-    "type": "bottom_contamination",
-    "pixel_auroc": 0.9819,
-    "iou": 0.267,
-    "localized": true,
-    "type_match": false
-   },
-   "parts_pct": {
-    "upper": 57.8,
-    "toe": 7.4,
-    "heel": 11.2,
-    "collar": 4.7,
-    "midsole": 8.7,
-    "outsole": 10.7,
-    "cement_boundary": 7.0
-   },
-   "z_mean": 1.33,
-   "z_max": 4.59,
-   "det_thr": 3.81,
-   "t_bank_s": 0.0,
-   "t_infer_s": 5.1,
-   "track": "field"
-  },
-  {
-   "id": "Stan-Smith_01_0124_ok",
-   "w": 308,
-   "h": 146,
-   "sku": "Stan-Smith",
-   "colorway_refs": 5,
-   "kind": "normal",
-   "verdict": "review",
-   "detections": [
-    {
-     "type": "upper_contamination",
-     "part": "upper",
-     "bbox": [
-      11,
-      20,
-      24,
-      21
-     ],
-     "area_pct": 0.94,
-     "z_max": 3.57,
-     "confidence": 0.59,
-     "severity": "minor"
-    },
-    {
-     "type": "upper_contamination",
-     "part": "upper",
-     "bbox": [
-      73,
-      42,
       28,
-      22
-     ],
-     "area_pct": 1.124,
-     "z_max": 3.32,
-     "confidence": 0.55,
-     "severity": "minor"
-    },
-    {
-     "type": "upper_contamination",
-     "part": "upper",
-     "bbox": [
-      64,
-      40,
-      16,
-      6
-     ],
-     "area_pct": 0.276,
-     "z_max": 2.8,
-     "confidence": 0.42,
-     "severity": "review"
-    },
-    {
-     "type": "upper_contamination",
-     "part": "upper",
-     "bbox": [
-      81,
-      34,
-      14,
-      6
-     ],
-     "area_pct": 0.238,
-     "z_max": 2.65,
-     "confidence": 0.37,
-     "severity": "review"
-    }
-   ],
-   "gt": null,
-   "parts_pct": {
-    "upper": 61.2,
-    "toe": 9.3,
-    "heel": 13.5,
-    "collar": 4.6,
-    "midsole": 9.1,
-    "outsole": 11.3,
-    "cement_boundary": 10.5
-   },
-   "z_mean": 0.66,
-   "z_max": 3.57,
-   "det_thr": 3.04,
-   "t_bank_s": 0.0,
-   "t_infer_s": 4.9,
-   "track": "field"
-  },
-  {
-   "id": "Stan-Smith_01_0124_excess_cement",
-   "w": 308,
-   "h": 146,
-   "sku": "Stan-Smith",
-   "colorway_refs": 5,
-   "kind": "defect",
-   "verdict": "review",
-   "detections": [
-    {
-     "type": "upper_contamination",
-     "part": "upper",
-     "bbox": [
-      11,
-      20,
-      24,
-      21
-     ],
-     "area_pct": 0.94,
-     "z_max": 3.57,
-     "confidence": 0.59,
-     "severity": "minor"
-    },
-    {
-     "type": "surface_anomaly",
-     "part": "midsole",
-     "bbox": [
-      92,
-      113,
+      181,
       17,
-      13
+      10
      ],
-     "area_pct": 0.579,
-     "z_max": 3.35,
-     "confidence": 0.55,
-     "severity": "review"
-    },
-    {
-     "type": "upper_contamination",
-     "part": "upper",
-     "bbox": [
-      73,
-      42,
-      28,
-      22
-     ],
-     "area_pct": 1.124,
-     "z_max": 3.32,
-     "confidence": 0.55,
-     "severity": "minor"
-    },
-    {
-     "type": "surface_anomaly",
-     "part": "toe",
-     "bbox": [
-      11,
-      85,
-      24,
-      15
-     ],
-     "area_pct": 0.804,
-     "z_max": 2.94,
-     "confidence": 0.47,
-     "severity": "review"
-    },
-    {
-     "type": "upper_contamination",
-     "part": "upper",
-     "bbox": [
-      64,
-      40,
-      16,
-      6
-     ],
-     "area_pct": 0.276,
-     "z_max": 2.8,
-     "confidence": 0.42,
-     "severity": "review"
-    },
-    {
-     "type": "surface_anomaly",
-     "part": "upper",
-     "bbox": [
-      81,
-      34,
-      14,
-      6
-     ],
-     "area_pct": 0.238,
-     "z_max": 2.65,
+     "area_pct": 0.247,
+     "z_max": 2.93,
      "confidence": 0.37,
      "severity": "review"
     }
    ],
    "gt": {
     "type": "excess_cement",
-    "pixel_auroc": 0.8553,
-    "iou": 0.097,
+    "pixel_auroc": 0.9867,
+    "iou": 0.07,
     "localized": true,
-    "type_match": false
+    "type_match": true
    },
    "parts_pct": {
-    "upper": 61.2,
-    "toe": 9.3,
-    "heel": 13.5,
-    "collar": 4.6,
-    "midsole": 9.1,
+    "upper": 55.9,
+    "toe": 8.5,
+    "heel": 16.8,
+    "collar": 9.9,
+    "midsole": 9.2,
     "outsole": 11.3,
-    "cement_boundary": 10.5
+    "cement_boundary": 11.2
    },
-   "z_mean": 0.78,
-   "z_max": 3.57,
-   "det_thr": 3.04,
+   "z_mean": 0.11,
+   "z_max": 3.78,
+   "det_thr": 3.38,
    "t_bank_s": 0.0,
-   "t_infer_s": 5.3,
+   "t_infer_s": 5.4,
    "track": "field"
   },
   {
@@ -867,7 +728,7 @@
    "w": 300,
    "h": 182,
    "sku": "Stan-Smith",
-   "colorway_refs": 4,
+   "colorway_refs": 3,
    "kind": "normal",
    "verdict": "review",
    "detections": [
@@ -875,29 +736,29 @@
      "type": "upper_contamination",
      "part": "collar",
      "bbox": [
-      185,
+      171,
+      25,
       12,
-      20,
-      11
+      9
      ],
-     "area_pct": 0.7,
-     "z_max": 3.62,
-     "confidence": 0.58,
-     "severity": "minor"
+     "area_pct": 0.263,
+     "z_max": 4.33,
+     "confidence": 0.48,
+     "severity": "review"
     },
     {
      "type": "upper_contamination",
      "part": "collar",
      "bbox": [
-      164,
-      26,
-      19,
+      185,
+      15,
+      20,
       8
      ],
-     "area_pct": 0.354,
-     "z_max": 3.17,
-     "confidence": 0.51,
-     "severity": "minor"
+     "area_pct": 0.454,
+     "z_max": 4.29,
+     "confidence": 0.47,
+     "severity": "review"
     }
    ],
    "gt": null,
@@ -910,11 +771,11 @@
     "outsole": 10.9,
     "cement_boundary": 11.0
    },
-   "z_mean": 0.43,
-   "z_max": 3.62,
-   "det_thr": 3.11,
+   "z_mean": 1.1,
+   "z_max": 4.33,
+   "det_thr": 4.43,
    "t_bank_s": 0.0,
-   "t_infer_s": 4.9,
+   "t_infer_s": 5.1,
    "track": "field"
   },
   {
@@ -922,57 +783,57 @@
    "w": 300,
    "h": 182,
    "sku": "Stan-Smith",
-   "colorway_refs": 4,
+   "colorway_refs": 3,
    "kind": "defect",
    "verdict": "review",
    "detections": [
     {
      "type": "upper_contamination",
-     "part": "collar",
+     "part": "upper",
      "bbox": [
-      185,
-      12,
-      20,
-      11
+      191,
+      44,
+      23,
+      18
      ],
-     "area_pct": 0.7,
-     "z_max": 3.62,
-     "confidence": 0.58,
-     "severity": "minor"
-    },
-    {
-     "type": "upper_contamination",
-     "part": "collar",
-     "bbox": [
-      164,
-      26,
-      19,
-      8
-     ],
-     "area_pct": 0.354,
-     "z_max": 3.17,
+     "area_pct": 1.174,
+     "z_max": 4.54,
      "confidence": 0.51,
      "severity": "minor"
     },
     {
      "type": "upper_contamination",
-     "part": "upper",
+     "part": "collar",
      "bbox": [
-      227,
-      70,
-      17,
-      13
+      171,
+      25,
+      12,
+      9
      ],
-     "area_pct": 0.569,
-     "z_max": 2.76,
-     "confidence": 0.39,
+     "area_pct": 0.259,
+     "z_max": 4.34,
+     "confidence": 0.48,
+     "severity": "review"
+    },
+    {
+     "type": "upper_contamination",
+     "part": "collar",
+     "bbox": [
+      185,
+      15,
+      20,
+      8
+     ],
+     "area_pct": 0.446,
+     "z_max": 4.26,
+     "confidence": 0.46,
      "severity": "review"
     }
    ],
    "gt": {
     "type": "upper_contamination",
-    "pixel_auroc": 0.9793,
-    "iou": 0.175,
+    "pixel_auroc": 0.9925,
+    "iou": 0.453,
     "localized": true,
     "type_match": true
    },
@@ -985,11 +846,11 @@
     "outsole": 10.9,
     "cement_boundary": 11.0
    },
-   "z_mean": 0.55,
-   "z_max": 3.62,
-   "det_thr": 3.11,
+   "z_mean": 1.17,
+   "z_max": 4.54,
+   "det_thr": 4.43,
    "t_bank_s": 0.0,
-   "t_infer_s": 5.0,
+   "t_infer_s": 5.3,
    "track": "field"
   },
   {
@@ -1015,7 +876,7 @@
    "z_max": 2.06,
    "det_thr": 2.75,
    "t_bank_s": 0.0,
-   "t_infer_s": 4.7,
+   "t_infer_s": 5.3,
    "track": "field"
   },
   {
@@ -1029,8 +890,8 @@
    "detections": [],
    "gt": {
     "type": "loose_thread",
-    "pixel_auroc": 0.9706,
-    "iou": 0.011,
+    "pixel_auroc": 0.9892,
+    "iou": 0.029,
     "localized": false,
     "type_match": false
    },
@@ -1043,11 +904,11 @@
     "outsole": 10.5,
     "cement_boundary": 12.5
    },
-   "z_mean": -0.33,
-   "z_max": 2.45,
+   "z_mean": -0.3,
+   "z_max": 2.57,
    "det_thr": 2.75,
    "t_bank_s": 0.0,
-   "t_infer_s": 4.8,
+   "t_infer_s": 5.9,
    "track": "field"
   },
   {
@@ -1088,7 +949,7 @@
    "z_max": 2.58,
    "det_thr": 1.99,
    "t_bank_s": 0.0,
-   "t_infer_s": 4.5,
+   "t_infer_s": 5.4,
    "track": "field"
   },
   {
@@ -1098,22 +959,8 @@
    "sku": "Gazelle",
    "colorway_refs": 3,
    "kind": "defect",
-   "verdict": "fail",
+   "verdict": "review",
    "detections": [
-    {
-     "type": "toe_scuff",
-     "part": "toe",
-     "bbox": [
-      18,
-      105,
-      59,
-      31
-     ],
-     "area_pct": 4.012,
-     "z_max": 3.36,
-     "confidence": 0.84,
-     "severity": "major"
-    },
     {
      "type": "surface_anomaly",
      "part": "collar",
@@ -1127,14 +974,28 @@
      "z_max": 2.58,
      "confidence": 0.65,
      "severity": "review"
+    },
+    {
+     "type": "surface_anomaly",
+     "part": "toe",
+     "bbox": [
+      49,
+      88,
+      38,
+      24
+     ],
+     "area_pct": 1.932,
+     "z_max": 2.55,
+     "confidence": 0.64,
+     "severity": "review"
     }
    ],
    "gt": {
     "type": "toe_scuff",
-    "pixel_auroc": 0.9724,
-    "iou": 0.468,
+    "pixel_auroc": 0.977,
+    "iou": 0.42,
     "localized": true,
-    "type_match": true
+    "type_match": false
    },
    "parts_pct": {
     "upper": 54.6,
@@ -1145,11 +1006,11 @@
     "outsole": 10.5,
     "cement_boundary": 10.1
    },
-   "z_mean": 0.16,
-   "z_max": 3.36,
+   "z_mean": 0.13,
+   "z_max": 2.58,
    "det_thr": 1.99,
    "t_bank_s": 0.0,
-   "t_infer_s": 4.6,
+   "t_infer_s": 5.6,
    "track": "field"
   },
   {
@@ -1260,7 +1121,7 @@
    "z_max": 4.03,
    "det_thr": 2.71,
    "t_bank_s": 0.0,
-   "t_infer_s": 5.7,
+   "t_infer_s": 3.5,
    "track": "field"
   },
   {
@@ -1272,6 +1133,20 @@
    "kind": "defect",
    "verdict": "review",
    "detections": [
+    {
+     "type": "bottom_contamination",
+     "part": "midsole",
+     "bbox": [
+      113,
+      149,
+      53,
+      18
+     ],
+     "area_pct": 2.439,
+     "z_max": 4.25,
+     "confidence": 0.78,
+     "severity": "minor"
+    },
     {
      "type": "surface_anomaly",
      "part": "upper",
@@ -1285,20 +1160,6 @@
      "z_max": 4.04,
      "confidence": 0.74,
      "severity": "review"
-    },
-    {
-     "type": "bottom_contamination",
-     "part": "outsole",
-     "bbox": [
-      254,
-      123,
-      28,
-      14
-     ],
-     "area_pct": 1.065,
-     "z_max": 3.55,
-     "confidence": 0.65,
-     "severity": "minor"
     },
     {
      "type": "surface_anomaly",
@@ -1323,7 +1184,7 @@
       22,
       22
      ],
-     "area_pct": 0.948,
+     "area_pct": 0.941,
      "z_max": 3.04,
      "confidence": 0.56,
      "severity": "review"
@@ -1373,8 +1234,8 @@
    ],
    "gt": {
     "type": "bottom_contamination",
-    "pixel_auroc": 0.8773,
-    "iou": 0.101,
+    "pixel_auroc": 0.9887,
+    "iou": 0.194,
     "localized": true,
     "type_match": true
    },
@@ -1387,11 +1248,11 @@
     "outsole": 10.6,
     "cement_boundary": 9.8
    },
-   "z_mean": 1.13,
-   "z_max": 4.03,
+   "z_mean": 1.19,
+   "z_max": 4.25,
    "det_thr": 2.71,
    "t_bank_s": 0.0,
-   "t_infer_s": 5.1,
+   "t_infer_s": 4.0,
    "track": "field"
   },
   {
@@ -1417,7 +1278,7 @@
    "z_max": 9.67,
    "det_thr": 5.35,
    "t_bank_s": 0.0,
-   "t_infer_s": 3.3,
+   "t_infer_s": 8.3,
    "track": "rig"
   },
   {
@@ -1438,7 +1299,7 @@
       110,
       83
      ],
-     "area_pct": 8.87,
+     "area_pct": 8.871,
      "z_max": 18.33,
      "confidence": 0.99,
      "severity": "major"
@@ -1464,7 +1325,7 @@
    "z_max": 18.33,
    "det_thr": 5.35,
    "t_bank_s": 0.0,
-   "t_infer_s": 3.2,
+   "t_infer_s": 6.4,
    "track": "rig"
   },
   {
@@ -1490,7 +1351,7 @@
    "z_max": 7.97,
    "det_thr": 6.44,
    "t_bank_s": 0.0,
-   "t_infer_s": 3.0,
+   "t_infer_s": 7.0,
    "track": "rig"
   },
   {
@@ -1511,8 +1372,8 @@
       125,
       65
      ],
-     "area_pct": 10.48,
-     "z_max": 22.68,
+     "area_pct": 10.484,
+     "z_max": 22.67,
      "confidence": 0.99,
      "severity": "major"
     }
@@ -1537,39 +1398,68 @@
    "z_max": 22.68,
    "det_thr": 6.44,
    "t_bank_s": 0.0,
-   "t_infer_s": 3.4,
+   "t_infer_s": 6.8,
    "track": "rig"
   },
   {
-   "id": "rig_Stan-Smith_01_0113_ok",
-   "w": 349,
-   "h": 199,
+   "id": "rig_Stan-Smith_01_0147_ok",
+   "w": 369,
+   "h": 244,
    "sku": "Stan-Smith",
    "colorway_refs": 6,
    "kind": "normal",
-   "verdict": "pass",
-   "detections": [],
+   "verdict": "review",
+   "detections": [
+    {
+     "type": "surface_anomaly",
+     "part": "heel",
+     "bbox": [
+      356,
+      156,
+      13,
+      9
+     ],
+     "area_pct": 0.203,
+     "z_max": 5.35,
+     "confidence": 0.67,
+     "severity": "review"
+    },
+    {
+     "type": "surface_anomaly",
+     "part": "outsole",
+     "bbox": [
+      350,
+      180,
+      8,
+      12
+     ],
+     "area_pct": 0.161,
+     "z_max": 4.18,
+     "confidence": 0.52,
+     "severity": "review"
+    }
+   ],
    "gt": null,
    "parts_pct": {
-    "upper": 57.7,
-    "toe": 7.6,
-    "heel": 11.0,
-    "collar": 4.9,
-    "midsole": 8.7,
-    "outsole": 10.7,
-    "cement_boundary": 7.1
+    "upper": 53.9,
+    "toe": 7.1,
+    "heel": 17.7,
+    "collar": 14.4,
+    "midsole": 9.6,
+    "outsole": 11.7,
+    "cement_boundary": 8.5
    },
-   "z_mean": -0.02,
-   "z_max": 5.82,
-   "det_thr": 4.92,
+   "z_mean": 0.44,
+   "z_max": 7.81,
+   "det_thr": 4.02,
    "t_bank_s": 0.0,
-   "t_infer_s": 5.8,
+   "t_infer_s": 8.2,
    "track": "rig"
   },
   {
-   "id": "rig_Stan-Smith_01_0113_bottom_contamination",
-   "w": 349,
-   "h": 199,
+   "id": "rig_Stan-Smith_01_0147_bottom_contamination",
+   "w": 369,
+   "h": 244,
    "sku": "Stan-Smith",
    "colorway_refs": 6,
    "kind": "defect",
@@ -1577,46 +1467,74 @@
    "detections": [
     {
      "type": "bottom_contamination",
-     "part": "midsole",
+     "part": "outsole",
      "bbox": [
-      86,
-      146,
+      178,
+      207,
       93,
-      38
+      33
      ],
-     "area_pct": 5.124,
-     "z_max": 16.23,
+     "area_pct": 4.119,
+     "z_max": 14.22,
      "confidence": 0.99,
      "severity": "major"
+    },
+    {
+     "type": "surface_anomaly",
+     "part": "heel",
+     "bbox": [
+      356,
+      156,
+      13,
+      9
+     ],
+     "area_pct": 0.203,
+     "z_max": 5.35,
+     "confidence": 0.67,
+     "severity": "review"
+    },
+    {
+     "type": "surface_anomaly",
+     "part": "outsole",
+     "bbox": [
+      350,
+      180,
+      8,
+      12
+     ],
+     "area_pct": 0.161,
+     "z_max": 4.18,
+     "confidence": 0.52,
+     "severity": "review"
     }
    ],
    "gt": {
     "type": "bottom_contamination",
-    "pixel_auroc": 0.999,
-    "iou": 0.345,
+    "pixel_auroc": 0.9994,
+    "iou": 0.301,
     "localized": true,
     "type_match": true
    },
    "parts_pct": {
-    "upper": 57.7,
-    "toe": 7.6,
-    "heel": 11.0,
-    "collar": 4.9,
-    "midsole": 8.7,
-    "outsole": 10.7,
-    "cement_boundary": 7.1
+    "upper": 53.9,
+    "toe": 7.1,
+    "heel": 17.7,
+    "collar": 14.4,
+    "midsole": 9.6,
+    "outsole": 11.7,
+    "cement_boundary": 8.5
    },
-   "z_mean": 0.64,
-   "z_max": 16.23,
-   "det_thr": 4.92,
+   "z_mean": 0.91,
+   "z_max": 14.22,
+   "det_thr": 4.02,
    "t_bank_s": 0.0,
-   "t_infer_s": 6.0,
+   "t_infer_s": 8.5,
    "track": "rig"
   },
   {
-   "id": "rig_Stan-Smith_01_0124_ok",
-   "w": 308,
-   "h": 146,
+   "id": "rig_Stan-Smith_01_0157_ok",
+   "w": 360,
+   "h": 227,
    "sku": "Stan-Smith",
    "colorway_refs": 6,
    "kind": "normal",
@@ -1624,66 +1542,66 @@
    "detections": [],
    "gt": null,
    "parts_pct": {
-    "upper": 60.9,
-    "toe": 9.3,
-    "heel": 13.4,
-    "collar": 5.1,
-    "midsole": 9.1,
+    "upper": 55.8,
+    "toe": 8.6,
+    "heel": 16.8,
+    "collar": 9.8,
+    "midsole": 9.2,
     "outsole": 11.3,
-    "cement_boundary": 10.7
+    "cement_boundary": 11.2
    },
-   "z_mean": 0.18,
-   "z_max": 5.56,
-   "det_thr": 4.58,
+   "z_mean": 0.87,
+   "z_max": 7.45,
+   "det_thr": 4.45,
    "t_bank_s": 0.0,
-   "t_infer_s": 6.1,
+   "t_infer_s": 6.0,
    "track": "rig"
   },
   {
-   "id": "rig_Stan-Smith_01_0124_excess_cement",
-   "w": 308,
-   "h": 146,
+   "id": "rig_Stan-Smith_01_0157_excess_cement",
+   "w": 360,
+   "h": 227,
    "sku": "Stan-Smith",
    "colorway_refs": 6,
    "kind": "defect",
    "verdict": "fail",
    "detections": [
     {
-     "type": "excess_cement",
-     "part": "cement_boundary",
+     "type": "upper_contamination",
+     "part": "upper",
      "bbox": [
-      165,
-      88,
-      134,
-      45
+      45,
+      178,
+      102,
+      32
      ],
-     "area_pct": 13.738,
-     "z_max": 14.08,
+     "area_pct": 7.552,
+     "z_max": 17.08,
      "confidence": 0.99,
      "severity": "major"
     }
    ],
    "gt": {
     "type": "excess_cement",
-    "pixel_auroc": 0.9932,
-    "iou": 0.675,
+    "pixel_auroc": 0.9968,
+    "iou": 0.426,
     "localized": true,
-    "type_match": true
+    "type_match": false
    },
    "parts_pct": {
-    "upper": 60.9,
-    "toe": 9.3,
-    "heel": 13.4,
-    "collar": 5.1,
-    "midsole": 9.1,
+    "upper": 55.8,
+    "toe": 8.6,
+    "heel": 16.8,
+    "collar": 9.8,
+    "midsole": 9.2,
     "outsole": 11.3,
-    "cement_boundary": 10.7
+    "cement_boundary": 11.2
    },
-   "z_mean": 1.4,
-   "z_max": 14.08,
-   "det_thr": 4.58,
+   "z_mean": 1.63,
+   "z_max": 17.08,
+   "det_thr": 4.45,
    "t_bank_s": 0.0,
-   "t_infer_s": 6.5,
+   "t_infer_s": 6.3,
    "track": "rig"
   },
   {
@@ -1693,23 +1611,38 @@
    "sku": "Gazelle",
    "colorway_refs": 6,
    "kind": "normal",
-   "verdict": "pass",
-   "detections": [],
+   "verdict": "fail",
+   "detections": [
+    {
+     "type": "upper_contamination",
+     "part": "collar",
+     "bbox": [
+      202,
+      25,
+      16,
+      9
+     ],
+     "area_pct": 0.354,
+     "z_max": 7.86,
+     "confidence": 0.99,
+     "severity": "major"
+    }
+   ],
    "gt": null,
    "parts_pct": {
-    "upper": 55.0,
+    "upper": 54.5,
     "toe": 9.8,
-    "heel": 13.6,
-    "collar": 3.5,
+    "heel": 13.8,
+    "collar": 4.0,
     "midsole": 8.6,
     "outsole": 10.5,
-    "cement_boundary": 10.1
+    "cement_boundary": 10.2
    },
-   "z_mean": 0.42,
-   "z_max": 8.44,
-   "det_thr": 4.36,
+   "z_mean": 0.38,
+   "z_max": 8.76,
+   "det_thr": 3.51,
    "t_bank_s": 0.0,
-   "t_infer_s": 5.5,
+   "t_infer_s": 8.0,
    "track": "rig"
   },
   {
@@ -1719,44 +1652,58 @@
    "sku": "Gazelle",
    "colorway_refs": 6,
    "kind": "defect",
-   "verdict": "review",
+   "verdict": "fail",
    "detections": [
     {
-     "type": "surface_anomaly",
+     "type": "toe_scuff",
      "part": "toe",
      "bbox": [
-      17,
-      77,
-      84,
-      54
+      15,
+      104,
+      80,
+      45
      ],
-     "area_pct": 9.429,
-     "z_max": 18.66,
+     "area_pct": 7.565,
+     "z_max": 20.28,
      "confidence": 0.99,
-     "severity": "review"
+     "severity": "major"
+    },
+    {
+     "type": "upper_contamination",
+     "part": "collar",
+     "bbox": [
+      202,
+      25,
+      16,
+      9
+     ],
+     "area_pct": 0.354,
+     "z_max": 7.86,
+     "confidence": 0.99,
+     "severity": "major"
     }
    ],
    "gt": {
     "type": "toe_scuff",
-    "pixel_auroc": 0.9957,
-    "iou": 0.502,
+    "pixel_auroc": 0.9956,
+    "iou": 0.43,
     "localized": true,
-    "type_match": false
+    "type_match": true
    },
    "parts_pct": {
-    "upper": 55.0,
+    "upper": 54.5,
     "toe": 9.8,
-    "heel": 13.6,
-    "collar": 3.5,
+    "heel": 13.8,
+    "collar": 4.0,
     "midsole": 8.6,
     "outsole": 10.5,
-    "cement_boundary": 10.1
+    "cement_boundary": 10.2
    },
-   "z_mean": 1.55,
-   "z_max": 18.66,
-   "det_thr": 4.36,
+   "z_mean": 1.22,
+   "z_max": 20.28,
+   "det_thr": 3.51,
    "t_bank_s": 0.0,
-   "t_infer_s": 5.8,
+   "t_infer_s": 7.9,
    "track": "rig"
   },
   {
@@ -1770,19 +1717,19 @@
    "detections": [],
    "gt": null,
    "parts_pct": {
-    "upper": 57.0,
-    "toe": 8.1,
-    "heel": 14.4,
-    "collar": 4.6,
+    "upper": 56.9,
+    "toe": 8.2,
+    "heel": 14.5,
+    "collar": 4.7,
     "midsole": 8.5,
-    "outsole": 10.6,
-    "cement_boundary": 9.9
+    "outsole": 10.5,
+    "cement_boundary": 9.8
    },
-   "z_mean": 0.37,
-   "z_max": 7.95,
-   "det_thr": 3.8,
+   "z_mean": 0.64,
+   "z_max": 10.63,
+   "det_thr": 3.84,
    "t_bank_s": 0.0,
-   "t_infer_s": 5.1,
+   "t_infer_s": 8.1,
    "track": "rig"
   },
   {
@@ -1798,38 +1745,38 @@
      "type": "surface_anomaly",
      "part": "upper",
      "bbox": [
-      58,
-      108,
-      53,
-      41
+      122,
+      97,
+      61,
+      44
      ],
-     "area_pct": 5.713,
-     "z_max": 11.92,
+     "area_pct": 6.758,
+     "z_max": 14.13,
      "confidence": 0.99,
      "severity": "review"
     }
    ],
    "gt": {
     "type": "upper_contamination",
-    "pixel_auroc": 0.9983,
-    "iou": 0.517,
+    "pixel_auroc": 0.9988,
+    "iou": 0.397,
     "localized": true,
     "type_match": false
    },
    "parts_pct": {
-    "upper": 57.0,
-    "toe": 8.1,
-    "heel": 14.4,
-    "collar": 4.6,
+    "upper": 56.9,
+    "toe": 8.2,
+    "heel": 14.5,
+    "collar": 4.7,
     "midsole": 8.5,
-    "outsole": 10.6,
-    "cement_boundary": 9.9
+    "outsole": 10.5,
+    "cement_boundary": 9.8
    },
-   "z_mean": 0.94,
-   "z_max": 11.92,
-   "det_thr": 3.8,
+   "z_mean": 1.24,
+   "z_max": 14.13,
+   "det_thr": 3.84,
    "t_bank_s": 0.0,
-   "t_infer_s": 5.1,
+   "t_infer_s": 7.3,
    "track": "rig"
   }
  ]

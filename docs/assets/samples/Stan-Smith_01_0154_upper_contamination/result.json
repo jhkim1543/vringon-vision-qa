@@ -3,57 +3,57 @@
  "w": 300,
  "h": 182,
  "sku": "Stan-Smith",
- "colorway_refs": 4,
+ "colorway_refs": 3,
  "kind": "defect",
  "verdict": "review",
  "detections": [
   {
    "type": "upper_contamination",
-   "part": "collar",
+   "part": "upper",
    "bbox": [
-    185,
-    12,
-    20,
-    11
+    191,
+    44,
+    23,
+    18
    ],
-   "area_pct": 0.7,
-   "z_max": 3.62,
-   "confidence": 0.58,
-   "severity": "minor"
-  },
-  {
-   "type": "upper_contamination",
-   "part": "collar",
-   "bbox": [
-    164,
-    26,
-    19,
-    8
-   ],
-   "area_pct": 0.354,
-   "z_max": 3.17,
+   "area_pct": 1.174,
+   "z_max": 4.54,
    "confidence": 0.51,
    "severity": "minor"
   },
   {
    "type": "upper_contamination",
-   "part": "upper",
+   "part": "collar",
    "bbox": [
-    227,
-    70,
-    17,
-    13
+    171,
+    25,
+    12,
+    9
    ],
-   "area_pct": 0.569,
-   "z_max": 2.76,
-   "confidence": 0.39,
+   "area_pct": 0.259,
+   "z_max": 4.34,
+   "confidence": 0.48,
+   "severity": "review"
+  },
+  {
+   "type": "upper_contamination",
+   "part": "collar",
+   "bbox": [
+    185,
+    15,
+    20,
+    8
+   ],
+   "area_pct": 0.446,
+   "z_max": 4.26,
+   "confidence": 0.46,
    "severity": "review"
   }
  ],
  "gt": {
   "type": "upper_contamination",
-  "pixel_auroc": 0.9793,
-  "iou": 0.175,
+  "pixel_auroc": 0.9925,
+  "iou": 0.453,
   "localized": true,
   "type_match": true
  },
@@ -66,9 +66,9 @@
   "outsole": 10.9,
   "cement_boundary": 11.0
  },
- "z_mean": 0.55,
- "z_max": 3.62,
- "det_thr": 3.11,
+ "z_mean": 1.17,
+ "z_max": 4.54,
+ "det_thr": 4.43,
  "t_bank_s": 0.0,
- "t_infer_s": 5.0
+ "t_infer_s": 5.3
 }

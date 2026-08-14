@@ -5,27 +5,69 @@
  "sku": "Superstar",
  "colorway_refs": 3,
  "kind": "defect",
- "verdict": "review",
+ "verdict": "fail",
  "detections": [
   {
    "type": "toe_scuff",
    "part": "toe",
    "bbox": [
-    40,
-    84,
-    22,
-    7
+    25,
+    65,
+    73,
+    34
    ],
-   "area_pct": 0.272,
-   "z_max": 2.31,
-   "confidence": 0.36,
+   "area_pct": 4.678,
+   "z_max": 4.21,
+   "confidence": 0.64,
+   "severity": "major"
+  },
+  {
+   "type": "surface_anomaly",
+   "part": "upper",
+   "bbox": [
+    101,
+    10,
+    186,
+    66
+   ],
+   "area_pct": 13.164,
+   "z_max": 3.98,
+   "confidence": 0.6,
+   "severity": "review"
+  },
+  {
+   "type": "surface_anomaly",
+   "part": "upper",
+   "bbox": [
+    174,
+    103,
+    16,
+    6
+   ],
+   "area_pct": 0.313,
+   "z_max": 2.99,
+   "confidence": 0.41,
+   "severity": "review"
+  },
+  {
+   "type": "surface_anomaly",
+   "part": "heel",
+   "bbox": [
+    290,
+    92,
+    10,
+    21
+   ],
+   "area_pct": 0.385,
+   "z_max": 2.94,
+   "confidence": 0.39,
    "severity": "review"
   }
  ],
  "gt": {
   "type": "toe_scuff",
-  "pixel_auroc": 0.8997,
-  "iou": 0.073,
+  "pixel_auroc": 0.941,
+  "iou": 0.148,
   "localized": true,
   "type_match": true
  },
@@ -38,9 +80,9 @@
   "outsole": 10.4,
   "cement_boundary": 10.5
  },
- "z_mean": 0.16,
- "z_max": 2.32,
- "det_thr": 2.69,
+ "z_mean": 1.92,
+ "z_max": 4.21,
+ "det_thr": 3.3,
  "t_bank_s": 0.0,
- "t_infer_s": 4.4
+ "t_infer_s": 5.6
 }

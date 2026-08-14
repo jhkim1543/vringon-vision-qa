@@ -1,0 +1,482 @@
+{
+ "id": "Stan-Smith_01_0147",
+ "sku": "Stan-Smith",
+ "view": "lateral",
+ "w": 369,
+ "h": 244,
+ "summary": {
+  "ref_len_px": 402.1,
+  "view": "lateral",
+  "n_measured": 3,
+  "n_advisory": 4,
+  "n_not_sensed": 4,
+  "bottom_line_rms": 2.03
+ },
+ "verdict": "FAIL",
+ "items": [
+  {
+   "item_id": "tip_length",
+   "no": 1,
+   "name_en": "Tip Length",
+   "name_ko": "팁 길이",
+   "cameras": [
+    "CAM1",
+    "CAM2"
+   ],
+   "sensing": "2D+3D",
+   "required_view": "lateral",
+   "feasibility": "needs_3d",
+   "vendor_logic": "팁 라인에 2차방정식을 피팅해 변곡점을 추출하고, 밑창 상단 평행라인과 팁 타원의 교점을 구한 뒤, 변곡점~팁 상부의 가상 경로에 굴곡 가중치를 부여해 실제 굴곡 거리로 환산. 정면에서 가려지는 구간은 3D 측면 형상과 중합해 실거리로 보정.",
+   "our_method": "토 윤곽에 2차곡선을 피팅해 변곡점을 찾고 밑창선과의 교점까지 곡률 가중 호장(arc length)을 적분한다. 단일 2D 사진에서는 전방 단축(foreshortening)을 풀 수 없어 참값이 아닌 **상대 지표**로만 제시.",
+   "units": "‰ of part length",
+   "measured": 643.99,
+   "status": "ADVISORY",
+   "uncertainty": null,
+   "geometry": {
+    "type": "arc",
+    "tip": [
+     22.12719345327362,
+     172.16615905441657
+    ],
+    "pts": [
+     [
+      102.7,
+      185.9
+     ],
+     [
+      92.2,
+      184.2
+     ],
+     [
+      82.1,
+      181.0
+     ],
+     [
+      71.3,
+      180.9
+     ],
+     [
+      60.8,
+      178.9
+     ],
+     [
+      50.0,
+      179.0
+     ],
+     [
+      39.4,
+      178.3
+     ],
+     [
+      29.3,
+      175.9
+     ],
+     [
+      20.5,
+      172.5
+     ],
+     [
+      12.3,
+      177.6
+     ],
+     [
+      8.5,
+      187.6
+     ],
+     [
+      2.1,
+      193.8
+     ],
+     [
+      0.1,
+      203.1
+     ],
+     [
+      0.0,
+      213.9
+     ],
+     [
+      1.1,
+      224.1
+     ],
+     [
+      11.0,
+      227.8
+     ],
+     [
+      21.3,
+      230.7
+     ],
+     [
+      31.5,
+      233.0
+     ],
+     [
+      41.9,
+      234.5
+     ],
+     [
+      52.4,
+      236.1
+     ],
+     [
+      63.1,
+      237.0
+     ],
+     [
+      69.7,
+      243.0
+     ],
+     [
+      80.5,
+      243.0
+     ],
+     [
+      91.3,
+      243.0
+     ],
+     [
+      102.1,
+      243.0
+     ]
+    ]
+   },
+   "note": "측면 투영 호장입니다. 정면에서 가려지는 구간을 3D로 중합하는 원 사양과 달리 단축(foreshortening)을 풀 수 없어 참값이 아니며, 골든 대비 상대 비교로만 사용합니다.",
+   "nominal": 768.06,
+   "sigma": 49.24,
+   "golden_n": 5,
+   "tol_lower": 620.34,
+   "tol_upper": 915.78,
+   "deviation": -124.07,
+   "verdict": "PASS"
+  },
+  {
+   "item_id": "tip_center",
+   "no": 2,
+   "name_en": "Tip Center",
+   "name_ko": "팁 센터",
+   "cameras": [
+    "CAM1",
+    "CAM2"
+   ],
+   "sensing": "2D",
+   "required_view": "lateral",
+   "feasibility": "measured",
+   "vendor_logic": "팁 중심(변곡점)부터 스트랩 하단부까지의 거리 연산.",
+   "our_method": "토 윤곽의 곡률 최대점을 팁 중심으로 잡고, 아일릿/레이스 영역 하단선까지의 거리를 잰다. 골든 샘플 대비 편차로 판정.",
+   "units": "‰ of part length",
+   "measured": 695.53,
+   "status": "MEASURED",
+   "uncertainty": null,
+   "geometry": {
+    "type": "segment",
+    "a": [
+     22.12719345327362,
+     172.16615905441657
+    ],
+    "b": [
+     276.99319943065,
+     57.0
+    ]
+   },
+   "note": "측면 뷰 기준 '팁~스로트' 거리입니다. 원 사양의 정면 Tip Center와는 다른 양이므로 같은 이름으로 비교하면 안 됩니다.",
+   "nominal": 683.54,
+   "sigma": 104.69,
+   "golden_n": 5,
+   "tol_lower": 369.47,
+   "tol_upper": 997.61,
+   "deviation": 11.99,
+   "verdict": "PASS"
+  },
+  {
+   "item_id": "eyestay_width",
+   "no": 3,
+   "name_en": "Eyestay Opening Width",
+   "name_ko": "아이스테이 개구폭",
+   "cameras": [
+    "CAM3"
+   ],
+   "sensing": "2D",
+   "required_view": "top",
+   "feasibility": "needs_view",
+   "vendor_logic": "지정 색상(레이스 사이로 보이는 안감)을 추출한 뒤 좌우간 거리 계측.",
+   "our_method": "상부 뷰에서 레이스 사이 개구 영역을 색·명도로 분리하고, 각 개구의 좌우 극점 사이 폭을 3구간에서 계측해 좌우 대칭성까지 본다.",
+   "units": "‰ of part length",
+   "measured": null,
+   "status": "NOT_SENSED",
+   "uncertainty": null,
+   "geometry": null,
+   "note": "이 항목은 top 뷰(CAM3)가 필요합니다. 현재 입력은 lateral 뷰라 계측하지 않습니다. 알고리즘은 구현되어 있으며 해당 뷰가 들어오면 동작합니다.",
+   "nominal": null,
+   "tol_lower": null,
+   "tol_upper": null,
+   "deviation": null
+  },
+  {
+   "item_id": "forefoot_mudguard",
+   "no": 4,
+   "name_en": "Forefoot Mudguard Distance",
+   "name_ko": "전족부 머드가드 거리",
+   "cameras": [
+    "CAM6",
+    "CAM7"
+   ],
+   "sensing": "2D",
+   "required_view": "lateral",
+   "feasibility": "measured",
+   "vendor_logic": "머드가드 라인과 바닥라인을 각각 직선 검출해 두 직선 사이 거리를 산출.",
+   "our_method": "전족부 구간에서 바닥선과 머드가드 상단 경계를 선분 검출로 뽑아 평행 근사한 뒤 수직 거리를 측정.",
+   "units": "‰ of part length",
+   "measured": 76.65,
+   "status": "MEASURED",
+   "uncertainty": 0.524,
+   "geometry": {
+    "type": "gap",
+    "x": 84.64,
+    "a": [
+     84.64,
+     242.0292848550858
+    ],
+    "b": [
+     84.64,
+     211.20685775968252
+    ],
+    "line_rms": 2.61,
+    "n_pts": 328
+   },
+   "note": "동일 이미지 내 두 평행 근사선의 수직 간격이라 스케일에 가장 강건한 항목입니다.",
+   "nominal": 99.9,
+   "sigma": 13.73,
+   "golden_n": 5,
+   "tol_lower": 58.71,
+   "tol_upper": 141.09,
+   "deviation": -23.25,
+   "verdict": "PASS"
+  },
+  {
+   "item_id": "heel_mudguard",
+   "no": 5,
+   "name_en": "Heel Mudguard Distance",
+   "name_ko": "힐 머드가드 거리",
+   "cameras": [
+    "CAM6",
+    "CAM7"
+   ],
+   "sensing": "2D",
+   "required_view": "lateral",
+   "feasibility": "measured",
+   "vendor_logic": "바닥 라인 추출 후 Heel Mudguard 라인 검출, 두 라인의 높이 차.",
+   "our_method": "힐 구간에서 항목 4와 같은 방식으로 바닥선~머드가드선 거리를 측정.",
+   "units": "‰ of part length",
+   "measured": 127.72,
+   "status": "MEASURED",
+   "uncertainty": 0.545,
+   "geometry": {
+    "type": "gap",
+    "x": 294.4,
+    "a": [
+     294.4,
+     242.9043328246409
+    ],
+    "b": [
+     294.4,
+     191.54553763172703
+    ],
+    "line_rms": 3.9,
+    "n_pts": 621
+   },
+   "note": "동일 이미지 내 두 평행 근사선의 수직 간격이라 스케일에 가장 강건한 항목입니다.",
+   "nominal": 87.85,
+   "sigma": 25.46,
+   "golden_n": 5,
+   "tol_lower": 11.47,
+   "tol_upper": 164.23,
+   "deviation": 39.87,
+   "verdict": "PASS"
+  },
+  {
+   "item_id": "heel_height",
+   "no": 6,
+   "name_en": "Heel Height",
+   "name_ko": "힐 높이",
+   "cameras": [
+    "CAM4"
+   ],
+   "sensing": "2D",
+   "required_view": "rear",
+   "feasibility": "measured",
+   "vendor_logic": "힐 외벽라인의 코너부를 감지해 교점 또는 코너검출 알고리즘으로 높이 산출.",
+   "our_method": "힐 외곽 윤곽에서 곡률 극대점(카운터 상단 코너)을 찾아 바닥선까지의 수직 거리를 측정. 후면 뷰가 있으면 그것을, 없으면 측면 뷰로 대체하고 대체 사실을 표시.",
+   "units": "‰ of part length",
+   "measured": 574.95,
+   "status": "ADVISORY",
+   "uncertainty": 6.617,
+   "geometry": {
+    "type": "segment",
+    "a": [
+     363.4591564709794,
+     12.0
+    ],
+    "b": [
+     363.4591564709794,
+     243.19242433382837
+    ]
+   },
+   "note": "측면 실루엣 기준 힐 프로파일 높이입니다. 원 사양은 후면(CAM4) 중심선에서 재는 항목이라 동일 값이 아닙니다.",
+   "nominal": 435.19,
+   "sigma": 4.2,
+   "golden_n": 5,
+   "tol_lower": 422.59,
+   "tol_upper": 447.79,
+   "deviation": 139.76,
+   "verdict": "FAIL"
+  },
+  {
+   "item_id": "heel_overlay",
+   "no": 7,
+   "name_en": "Heel Overlay Distance",
+   "name_ko": "힐 오버레이 거리",
+   "cameras": [
+    "CAM4"
+   ],
+   "sensing": "2D",
+   "required_view": "rear",
+   "feasibility": "measured",
+   "vendor_logic": "힐 부분 머드가드를 사선 검출로 잡고 두 사선의 교점을 채용(원본 사전 변조 필요).",
+   "our_method": "힐 영역에서 두 개의 우세 사선을 선분 검출로 추출해 교점을 구하고 바닥선까지의 거리를 측정.",
+   "units": "‰ of part length",
+   "measured": 122.38,
+   "status": "ADVISORY",
+   "uncertainty": null,
+   "geometry": {
+    "type": "cross",
+    "p": [
+     388.3017996596187,
+     194.35628329637063
+    ],
+    "a": [
+     356.14898681640625,
+     202.65512084960938,
+     233.13307189941406,
+     234.40628051757812
+    ],
+    "b": [
+     350.82659912109375,
+     83.8825912475586,
+     365.0524597167969,
+     125.8192138671875
+    ]
+   },
+   "note": "측면 뷰에서 근사한 값입니다. 원 사양은 후면(CAM4) + 사전 원근 변조를 전제로 하며, 두 사선 교점은 평행에 가까울수록 급격히 불안정해집니다.",
+   "nominal": 163.41,
+   "sigma": 129.45,
+   "golden_n": 5,
+   "tol_lower": 0.0,
+   "tol_upper": 551.76,
+   "deviation": -41.03,
+   "verdict": "PASS"
+  },
+  {
+   "item_id": "heel_center",
+   "no": 8,
+   "name_en": "Heel Center",
+   "name_ko": "힐 센터",
+   "cameras": [
+    "CAM4"
+   ],
+   "sensing": "2D",
+   "required_view": "rear",
+   "feasibility": "needs_view",
+   "vendor_logic": "후면 뷰에서 힐 중심 정렬 확인.",
+   "our_method": "후면 뷰 실루엣의 좌우 대칭축과 힐 카운터 중앙선(로고/솔기 기준)의 수평 편차를 측정. 측면 뷰로는 정의되지 않는 항목.",
+   "units": "‰ of part length",
+   "measured": null,
+   "status": "NOT_SENSED",
+   "uncertainty": null,
+   "geometry": null,
+   "note": "이 항목은 rear 뷰(CAM4)가 필요합니다. 현재 입력은 lateral 뷰라 계측하지 않습니다. 알고리즘은 구현되어 있으며 해당 뷰가 들어오면 동작합니다.",
+   "nominal": null,
+   "tol_lower": null,
+   "tol_upper": null,
+   "deviation": null
+  },
+  {
+   "item_id": "strobel",
+   "no": 9,
+   "name_en": "Strobel Inspection",
+   "name_ko": "중창(스트로벨) 검사",
+   "cameras": [
+    "CAM5"
+   ],
+   "sensing": "2D",
+   "required_view": "bottom",
+   "feasibility": "needs_view",
+   "vendor_logic": "윤곽 추출·증폭 → 고대비 재처리 → 잡음 제거/분리. Strobel 중심과 중심선, 좌우 종단을 잡아 종단폭 대비 4분할 위치를 정하고 3포인트 폭을 계측. 추가로 홀 내부 RED MARK를 색상 선택 추출 + 최소크기 제어로 감지.",
+   "our_method": "하부 뷰에서 스트로벨 외곽을 분리해 중심선을 잡고 4분할 3지점 폭을 계측, 홀은 최소면적 제어 블롭 검출로 찾고 홀 내부 색을 판정.",
+   "units": "‰ of part length",
+   "measured": null,
+   "status": "NOT_SENSED",
+   "uncertainty": null,
+   "geometry": null,
+   "note": "이 항목은 bottom 뷰(CAM5)가 필요합니다. 현재 입력은 lateral 뷰라 계측하지 않습니다. 알고리즘은 구현되어 있으며 해당 뷰가 들어오면 동작합니다.",
+   "nominal": null,
+   "tol_lower": null,
+   "tol_upper": null,
+   "deviation": null
+  },
+  {
+   "item_id": "colorway_capability",
+   "no": 10,
+   "name_en": "Other Colourway Capability",
+   "name_ko": "타색상 검사 가능성",
+   "cameras": [],
+   "sensing": "-",
+   "required_view": "lateral",
+   "feasibility": "advisory",
+   "vendor_logic": "색상보다 재질의 영향이 크다. 광택 소재와 엠보싱 패턴은 검사 수준이 대폭 저하될 가능성이 있음.",
+   "our_method": "정반사(스펙큘러) 화소 비율과 텍스처 에너지를 측정해 광택·엠보싱 정도를 정량화하고, 그 값으로 해당 개체의 검사 난이도를 등급화.",
+   "units": "%",
+   "measured": 37.2,
+   "status": "ADVISORY",
+   "uncertainty": null,
+   "geometry": {
+    "specular_fraction": 0.0428,
+    "texture_energy": 99.97
+   },
+   "note": "정반사 화소 비율과 텍스처 에너지로 계산한 검사 여력입니다. 벤더 지적대로 색상보다 재질(광택·엠보싱)이 지배적입니다.",
+   "nominal": 46.8,
+   "sigma": 2.0,
+   "golden_n": 5,
+   "tol_lower": 40.8,
+   "tol_upper": 52.8,
+   "deviation": -9.6,
+   "verdict": "FAIL"
+  },
+  {
+   "item_id": "black_capability",
+   "no": 11,
+   "name_en": "Black Colourway Capability",
+   "name_ko": "검정색 검사 가능성",
+   "cameras": [],
+   "sensing": "-",
+   "required_view": "lateral",
+   "feasibility": "advisory",
+   "vendor_logic": "검사 가능하나 타색상 대비 약 90% 수준의 효율로 예측됨.",
+   "our_method": "어두운 영역의 국소 대비(에지 응답)와 계조 여유를 측정해 검정 소재에서 실제로 남는 검사 여력을 수치화.",
+   "units": "%",
+   "measured": null,
+   "status": "NOT_SENSED",
+   "uncertainty": null,
+   "geometry": {
+    "edge_snr_all": 16.72,
+    "edge_snr_dark": 0.0,
+    "dark_fraction": 0.004
+   },
+   "note": "이 개체는 어두운 영역이 2% 미만이라 검정 소재 검사 여력을 직접 측정할 수 없습니다. 검정 컬러웨이 샘플이 필요합니다.",
+   "nominal": 87.2,
+   "tol_lower": null,
+   "tol_upper": null,
+   "deviation": null
+  }
+ ]
+}

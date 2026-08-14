@@ -29,11 +29,11 @@ N_REF = 6
 RNG = np.random.default_rng(2026)
 
 # one source per defect type, spread across the three SKUs
-PLAN = [
+PLAN = [                        # verified single-shoe photographs only
     ("Superstar", "01_0031", "upper_contamination"),
     ("Superstar", "01_0047", "loose_thread"),
-    ("Stan-Smith", "01_0113", "bottom_contamination"),
-    ("Stan-Smith", "01_0124", "excess_cement"),
+    ("Stan-Smith", "01_0147", "bottom_contamination"),
+    ("Stan-Smith", "01_0157", "excess_cement"),
     ("Gazelle", "01_0242", "toe_scuff"),
     ("Gazelle", "01_0246", "upper_contamination"),
 ]

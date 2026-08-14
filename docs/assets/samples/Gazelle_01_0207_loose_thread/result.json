@@ -9,8 +9,8 @@
  "detections": [],
  "gt": {
   "type": "loose_thread",
-  "pixel_auroc": 0.9706,
-  "iou": 0.011,
+  "pixel_auroc": 0.9892,
+  "iou": 0.029,
   "localized": false,
   "type_match": false
  },
@@ -23,9 +23,9 @@
   "outsole": 10.5,
   "cement_boundary": 12.5
  },
- "z_mean": -0.33,
- "z_max": 2.45,
+ "z_mean": -0.3,
+ "z_max": 2.57,
  "det_thr": 2.75,
  "t_bank_s": 0.0,
- "t_infer_s": 4.8
+ "t_infer_s": 5.9
 }

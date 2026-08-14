@@ -25,20 +25,20 @@
    "verdict": "FAIL"
   },
   {
-   "id": "Stan-Smith_01_0113",
+   "id": "Stan-Smith_01_0147",
    "sku": "Stan-Smith",
    "view": "lateral",
-   "w": 349,
-   "h": 199,
+   "w": 369,
+   "h": 244,
    "verdict": "FAIL"
   },
   {
-   "id": "Stan-Smith_01_0124",
+   "id": "Stan-Smith_01_0157",
    "sku": "Stan-Smith",
    "view": "lateral",
-   "w": 308,
-   "h": 146,
-   "verdict": "PASS"
+   "w": 360,
+   "h": 227,
+   "verdict": "FAIL"
   },
   {
    "id": "Stan-Smith_01_0154",
@@ -46,7 +46,7 @@
    "view": "lateral",
    "w": 300,
    "h": 182,
-   "verdict": "REVIEW"
+   "verdict": "FAIL"
   },
   {
    "id": "Gazelle_01_0207",
@@ -77,84 +77,84 @@
   "Superstar": {
    "stats": {
     "tip_length": {
-     "n": 11,
-     "centre": 793.25,
-     "sigma": 122.37
+     "n": 6,
+     "centre": 772.22,
+     "sigma": 104.59
     },
     "tip_center": {
-     "n": 11,
-     "centre": 565.89,
-     "sigma": 155.61
+     "n": 6,
+     "centre": 567.05,
+     "sigma": 105.95
     },
     "forefoot_mudguard": {
-     "n": 11,
-     "centre": 101.06,
-     "sigma": 12.68
+     "n": 6,
+     "centre": 88.37,
+     "sigma": 19.18
     },
     "heel_mudguard": {
-     "n": 11,
-     "centre": 104.36,
-     "sigma": 21.59
+     "n": 6,
+     "centre": 90.72,
+     "sigma": 13.1
     },
     "heel_height": {
-     "n": 11,
-     "centre": 394.25,
-     "sigma": 53.37
+     "n": 6,
+     "centre": 384.76,
+     "sigma": 24.21
     },
     "heel_overlay": {
-     "n": 11,
-     "centre": 93.94,
-     "sigma": 59.94
+     "n": 6,
+     "centre": 88.21,
+     "sigma": 29.33
     },
     "colorway_capability": {
-     "n": 11,
-     "centre": 34.5,
-     "sigma": 6.38
+     "n": 6,
+     "centre": 34.15,
+     "sigma": 4.67
     },
     "black_capability": {
-     "n": 10,
-     "centre": 82.0,
-     "sigma": 25.06
+     "n": 5,
+     "centre": 56.0,
+     "sigma": 25.95
     }
    },
-   "n_golden": 11
+   "n_golden": 6
   },
   "Stan-Smith": {
    "stats": {
     "tip_length": {
-     "n": 7,
-     "centre": 746.21,
-     "sigma": 97.93
+     "n": 5,
+     "centre": 768.06,
+     "sigma": 49.24
     },
     "tip_center": {
-     "n": 7,
-     "centre": 693.67,
-     "sigma": 57.35
+     "n": 5,
+     "centre": 683.54,
+     "sigma": 104.69
     },
     "forefoot_mudguard": {
-     "n": 7,
-     "centre": 97.58,
-     "sigma": 10.29
+     "n": 5,
+     "centre": 99.9,
+     "sigma": 13.73
     },
     "heel_mudguard": {
-     "n": 7,
-     "centre": 110.41,
-     "sigma": 33.45
+     "n": 5,
+     "centre": 87.85,
+     "sigma": 25.46
     },
     "heel_height": {
-     "n": 7,
-     "centre": 436.67,
-     "sigma": 18.01
+     "n": 5,
+     "centre": 435.19,
+     "sigma": 4.2
     },
     "heel_overlay": {
-     "n": 7,
-     "centre": 155.08,
-     "sigma": 114.89
+     "n": 5,
+     "centre": 163.41,
+     "sigma": 129.45
     },
     "colorway_capability": {
-     "n": 7,
-     "centre": 45.9,
-     "sigma": 2.22
+     "n": 5,
+     "centre": 46.8,
+     "sigma": 2.0
     },
     "black_capability": {
      "n": 4,
@@ -162,52 +162,52 @@
      "sigma": 18.31
     }
    },
-   "n_golden": 7
+   "n_golden": 5
   },
   "Gazelle": {
    "stats": {
     "tip_length": {
-     "n": 14,
-     "centre": 701.07,
-     "sigma": 18.26
+     "n": 13,
+     "centre": 698.61,
+     "sigma": 14.56
     },
     "tip_center": {
-     "n": 14,
-     "centre": 619.56,
-     "sigma": 131.17
+     "n": 13,
+     "centre": 627.6,
+     "sigma": 140.33
     },
     "forefoot_mudguard": {
-     "n": 14,
-     "centre": 113.12,
-     "sigma": 22.72
+     "n": 13,
+     "centre": 107.63,
+     "sigma": 25.31
     },
     "heel_mudguard": {
-     "n": 14,
-     "centre": 117.55,
-     "sigma": 37.21
+     "n": 13,
+     "centre": 117.14,
+     "sigma": 36.18
     },
     "heel_height": {
-     "n": 14,
-     "centre": 450.26,
-     "sigma": 93.04
+     "n": 13,
+     "centre": 426.81,
+     "sigma": 81.8
     },
     "heel_overlay": {
-     "n": 14,
-     "centre": 99.27,
-     "sigma": 56.65
+     "n": 13,
+     "centre": 95.4,
+     "sigma": 52.1
     },
     "colorway_capability": {
-     "n": 14,
-     "centre": 43.4,
-     "sigma": 7.41
+     "n": 13,
+     "centre": 43.3,
+     "sigma": 6.82
     },
     "black_capability": {
-     "n": 14,
-     "centre": 72.3,
-     "sigma": 14.68
+     "n": 13,
+     "centre": 71.7,
+     "sigma": 15.86
     }
    },
-   "n_golden": 14
+   "n_golden": 13
   }
  },
  "k_sigma": 3.0,

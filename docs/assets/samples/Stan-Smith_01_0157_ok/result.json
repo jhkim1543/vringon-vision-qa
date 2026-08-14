@@ -1,0 +1,40 @@
+{
+ "id": "Stan-Smith_01_0157_ok",
+ "w": 360,
+ "h": 227,
+ "sku": "Stan-Smith",
+ "colorway_refs": 3,
+ "kind": "normal",
+ "verdict": "review",
+ "detections": [
+  {
+   "type": "excess_cement",
+   "part": "cement_boundary",
+   "bbox": [
+    35,
+    199,
+    20,
+    9
+   ],
+   "area_pct": 0.414,
+   "z_max": 3.37,
+   "confidence": 0.5,
+   "severity": "review"
+  }
+ ],
+ "gt": null,
+ "parts_pct": {
+  "upper": 55.9,
+  "toe": 8.5,
+  "heel": 16.8,
+  "collar": 9.9,
+  "midsole": 9.2,
+  "outsole": 11.3,
+  "cement_boundary": 11.2
+ },
+ "z_mean": -0.04,
+ "z_max": 3.37,
+ "det_thr": 3.38,
+ "t_bank_s": 0.0,
+ "t_infer_s": 5.5
+}

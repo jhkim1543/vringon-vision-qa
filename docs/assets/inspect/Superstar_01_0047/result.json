@@ -190,12 +190,12 @@
     ]
    },
    "note": "측면 투영 호장입니다. 정면에서 가려지는 구간을 3D로 중합하는 원 사양과 달리 단축(foreshortening)을 풀 수 없어 참값이 아니며, 골든 대비 상대 비교로만 사용합니다.",
-   "nominal": 793.25,
-   "sigma": 122.37,
-   "golden_n": 11,
-   "tol_lower": 426.14,
-   "tol_upper": 1160.36,
-   "deviation": -87.58,
+   "nominal": 772.22,
+   "sigma": 104.59,
+   "golden_n": 6,
+   "tol_lower": 458.45,
+   "tol_upper": 1085.99,
+   "deviation": -66.55,
    "verdict": "PASS"
   },
   {
@@ -228,12 +228,12 @@
     ]
    },
    "note": "측면 뷰 기준 '팁~스로트' 거리입니다. 원 사양의 정면 Tip Center와는 다른 양이므로 같은 이름으로 비교하면 안 됩니다.",
-   "nominal": 565.89,
-   "sigma": 155.61,
-   "golden_n": 11,
-   "tol_lower": 99.06,
-   "tol_upper": 1032.72,
-   "deviation": 93.43,
+   "nominal": 567.05,
+   "sigma": 105.95,
+   "golden_n": 6,
+   "tol_lower": 249.2,
+   "tol_upper": 884.9,
+   "deviation": 92.27,
    "verdict": "PASS"
   },
   {
@@ -287,18 +287,18 @@
     ],
     "b": [
      108.79,
-     132.37734431720176
+     132.37734331113495
     ],
     "line_rms": 34.64,
     "n_pts": 1638
    },
    "note": "동일 이미지 내 두 평행 근사선의 수직 간격이라 스케일에 가장 강건한 항목입니다.",
-   "nominal": 101.06,
-   "sigma": 12.68,
-   "golden_n": 11,
-   "tol_lower": 63.02,
-   "tol_upper": 139.1,
-   "deviation": 102.59,
+   "nominal": 88.37,
+   "sigma": 19.18,
+   "golden_n": 6,
+   "tol_lower": 30.83,
+   "tol_upper": 145.91,
+   "deviation": 115.28,
    "verdict": "FAIL"
   },
   {
@@ -328,18 +328,18 @@
     ],
     "b": [
      378.4,
-     172.60225634400624
+     172.6022562963836
     ],
     "line_rms": 23.28,
     "n_pts": 621
    },
    "note": "동일 이미지 내 두 평행 근사선의 수직 간격이라 스케일에 가장 강건한 항목입니다.",
-   "nominal": 104.36,
-   "sigma": 21.59,
-   "golden_n": 11,
-   "tol_lower": 39.59,
-   "tol_upper": 169.13,
-   "deviation": 4.88,
+   "nominal": 90.72,
+   "sigma": 13.1,
+   "golden_n": 6,
+   "tol_lower": 51.42,
+   "tol_upper": 130.02,
+   "deviation": 18.52,
    "verdict": "PASS"
   },
   {
@@ -371,12 +371,12 @@
     ]
    },
    "note": "측면 실루엣 기준 힐 프로파일 높이입니다. 원 사양은 후면(CAM4) 중심선에서 재는 항목이라 동일 값이 아닙니다.",
-   "nominal": 394.25,
-   "sigma": 53.37,
-   "golden_n": 11,
-   "tol_lower": 234.14,
-   "tol_upper": 554.36,
-   "deviation": 3.36,
+   "nominal": 384.76,
+   "sigma": 24.21,
+   "golden_n": 6,
+   "tol_lower": 312.13,
+   "tol_upper": 457.39,
+   "deviation": 12.85,
    "verdict": "PASS"
   },
   {
@@ -416,12 +416,12 @@
     ]
    },
    "note": "측면 뷰에서 근사한 값입니다. 원 사양은 후면(CAM4) + 사전 원근 변조를 전제로 하며, 두 사선 교점은 평행에 가까울수록 급격히 불안정해집니다.",
-   "nominal": 93.94,
-   "sigma": 59.94,
-   "golden_n": 11,
-   "tol_lower": 0.0,
-   "tol_upper": 273.76,
-   "deviation": -26.31,
+   "nominal": 88.21,
+   "sigma": 29.33,
+   "golden_n": 6,
+   "tol_lower": 0.22,
+   "tol_upper": 176.2,
+   "deviation": -20.58,
    "verdict": "PASS"
   },
   {
@@ -492,12 +492,12 @@
     "texture_energy": 107.73
    },
    "note": "정반사 화소 비율과 텍스처 에너지로 계산한 검사 여력입니다. 벤더 지적대로 색상보다 재질(광택·엠보싱)이 지배적입니다.",
-   "nominal": 34.5,
-   "sigma": 6.38,
-   "golden_n": 11,
-   "tol_lower": 15.36,
-   "tol_upper": 53.64,
-   "deviation": 8.9,
+   "nominal": 34.15,
+   "sigma": 4.67,
+   "golden_n": 6,
+   "tol_lower": 20.14,
+   "tol_upper": 48.16,
+   "deviation": 9.25,
    "verdict": "PASS"
   },
   {
@@ -521,12 +521,12 @@
     "dark_fraction": 0.168
    },
    "note": "어두운 영역의 에지 SNR을 같은 개체의 전체 SNR과 비교한 상대 여력입니다. 벤더는 타색상 대비 90% 수준을 예측했습니다.",
-   "nominal": 82.0,
-   "sigma": 25.06,
-   "golden_n": 10,
-   "tol_lower": 6.82,
-   "tol_upper": 157.18,
-   "deviation": -28.1,
+   "nominal": 56.0,
+   "sigma": 25.95,
+   "golden_n": 5,
+   "tol_lower": 0.0,
+   "tol_upper": 133.85,
+   "deviation": -2.1,
    "verdict": "PASS"
   }
  ]

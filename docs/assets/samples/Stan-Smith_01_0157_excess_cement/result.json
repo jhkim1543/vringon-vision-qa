@@ -1,0 +1,60 @@
+{
+ "id": "Stan-Smith_01_0157_excess_cement",
+ "w": 360,
+ "h": 227,
+ "sku": "Stan-Smith",
+ "colorway_refs": 3,
+ "kind": "defect",
+ "verdict": "review",
+ "detections": [
+  {
+   "type": "excess_cement",
+   "part": "cement_boundary",
+   "bbox": [
+    128,
+    197,
+    22,
+    11
+   ],
+   "area_pct": 0.5,
+   "z_max": 3.78,
+   "confidence": 0.56,
+   "severity": "minor"
+  },
+  {
+   "type": "excess_cement",
+   "part": "cement_boundary",
+   "bbox": [
+    28,
+    181,
+    17,
+    10
+   ],
+   "area_pct": 0.247,
+   "z_max": 2.93,
+   "confidence": 0.37,
+   "severity": "review"
+  }
+ ],
+ "gt": {
+  "type": "excess_cement",
+  "pixel_auroc": 0.9867,
+  "iou": 0.07,
+  "localized": true,
+  "type_match": true
+ },
+ "parts_pct": {
+  "upper": 55.9,
+  "toe": 8.5,
+  "heel": 16.8,
+  "collar": 9.9,
+  "midsole": 9.2,
+  "outsole": 11.3,
+  "cement_boundary": 11.2
+ },
+ "z_mean": 0.11,
+ "z_max": 3.78,
+ "det_thr": 3.38,
+ "t_bank_s": 0.0,
+ "t_infer_s": 5.4
+}

@@ -26,9 +26,9 @@ MIN_AREA = 60        # px at display resolution
 RNG = np.random.default_rng(42)
 
 # SKU test images (clean lateral single-shoe, chosen from contact sheet)
-TESTS = {
+TESTS = {                       # verified single-shoe photographs only
     "Superstar": ["01_0031", "01_0035", "01_0047", "01_0054"],
-    "Stan-Smith": ["01_0113", "01_0124", "01_0154"],
+    "Stan-Smith": ["01_0147", "01_0157", "01_0154"],
     "Gazelle": ["01_0207", "01_0242", "01_0246"],
 }
 # which defects to synthesize on which test image (part-aware variety)
@@ -37,8 +37,8 @@ DEFECT_PLAN = {
     ("Superstar", "01_0035"): ["excess_cement"],
     ("Superstar", "01_0047"): ["loose_thread"],
     ("Superstar", "01_0054"): ["toe_scuff"],
-    ("Stan-Smith", "01_0113"): ["bottom_contamination"],
-    ("Stan-Smith", "01_0124"): ["excess_cement"],
+    ("Stan-Smith", "01_0147"): ["bottom_contamination"],
+    ("Stan-Smith", "01_0157"): ["excess_cement"],
     ("Stan-Smith", "01_0154"): ["upper_contamination"],
     ("Gazelle", "01_0207"): ["loose_thread"],
     ("Gazelle", "01_0242"): ["toe_scuff"],
@@ -245,10 +245,12 @@ def _bbox_overlap(bbox, gt_mask):
     return (gt_mask[y:y + h, x:x + w] > 0).any()
 
 def main():
+    from curation import filter_files
     all_imgs = {}
     for sku_dir in glob.glob(os.path.join(SKU_DIR, "*")):
         sku = os.path.basename(sku_dir)
-        for f in glob.glob(os.path.join(sku_dir, "*.jpg")):
+        # pair photographs poison the reference bank as well as the test set
+        for f in filter_files(sku, glob.glob(os.path.join(sku_dir, "*.jpg"))):
             key = os.path.splitext(os.path.basename(f))[0]
             all_imgs.setdefault(sku, {})[key] = f
 

@@ -3,7 +3,7 @@
  "w": 474,
  "h": 321,
  "sku": "Superstar",
- "colorway_refs": 7,
+ "colorway_refs": 4,
  "kind": "normal",
  "verdict": "pass",
  "detections": [],
@@ -17,9 +17,9 @@
   "outsole": 11.1,
   "cement_boundary": 7.1
  },
- "z_mean": -0.36,
- "z_max": 1.25,
- "det_thr": 1.72,
+ "z_mean": -0.02,
+ "z_max": 1.38,
+ "det_thr": 1.67,
  "t_bank_s": 0.0,
  "t_infer_s": 5.8
 }
