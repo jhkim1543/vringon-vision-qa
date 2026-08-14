@@ -365,6 +365,150 @@ def item_material(bgr, mask):
     return r10, r11
 
 
+def item_eyestay_width(bgr, mask, ref_len):
+    """Item 3 — throat opening width, from the top view.
+
+    The vendor keys on a designated colour (red lining seen between the lace
+    rows). On a shaded render there is no lining colour, so the same opening is
+    found by its depth instead: the throat is the recessed, darker band running
+    down the middle of the shoe. Measured at three stations so left/right
+    asymmetry shows up rather than being averaged away.
+    """
+    item = BY_ID["eyestay_width"]
+    ys, xs = np.where(mask > 0)
+    if len(xs) < 200:
+        return _rec(item, note="실루엣 부족")
+    x0, x1, y0, y1 = xs.min(), xs.max(), ys.min(), ys.max()
+    g = cv2.cvtColor(bgr, cv2.COLOR_BGR2GRAY).astype(np.float32)
+    inner = cv2.erode(mask, np.ones((9, 9), np.uint8))
+    v = g[inner > 0]
+    if v.size < 200:
+        return _rec(item, note="내부 영역 부족")
+    thr = float(np.quantile(v, 0.22))          # recessed = darker
+    rec_mask = ((g <= thr) & (inner > 0)).astype(np.uint8)
+    rec_mask = cv2.morphologyEx(rec_mask, cv2.MORPH_OPEN, np.ones((5, 5), np.uint8))
+    n, lab, stats, cents = cv2.connectedComponentsWithStats(rec_mask)
+    if n < 2:
+        return _rec(item, note="개구부(오목 영역)를 찾지 못했습니다.")
+    # the throat is the large central component, not a shadow at the rim
+    cx0 = 0.5 * (x0 + x1)
+    best, score = None, -1e9
+    for i in range(1, n):
+        a = stats[i, cv2.CC_STAT_AREA]
+        if a < 0.005 * mask.sum():
+            continue
+        s = a - 3.0 * abs(cents[i][0] - cx0) * 20
+        if s > score:
+            score, best = s, i
+    if best is None:
+        return _rec(item, note="유효한 개구부 후보가 없습니다.")
+    comp = (lab == best).astype(np.uint8)
+    cys, cxs = np.where(comp > 0)
+    ly0, ly1 = cys.min(), cys.max()
+    widths, stations = [], []
+    for f in (0.30, 0.50, 0.70):
+        y = int(ly0 + (ly1 - ly0) * f)
+        row = np.where(comp[y] > 0)[0]
+        if len(row) < 2:
+            continue
+        widths.append(float(row.max() - row.min()))
+        stations.append([float(row.min()), float(y), float(row.max())])
+    if not widths:
+        return _rec(item, note="개구 폭 계측 실패")
+    w = float(np.median(widths))
+    spread = float(np.max(widths) - np.min(widths))
+    return _rec(item, measured=round(M.permille(w, ref_len), 2), status="MEASURED",
+                uncertainty=round(M.permille(spread / 2, ref_len), 2),
+                geometry={"type": "stations", "rows": stations},
+                note=("상부 뷰에서 오목한 스로트 영역을 분리해 3지점 개구폭의 중앙값을 "
+                      "계측했습니다. 원 사양은 지정 색상(빨간 안감) 추출을 쓰지만 "
+                      "렌더에는 안감 색이 없어 깊이(음영)로 대체했습니다."))
+
+
+def item_heel_center(bgr, mask, ref_len):
+    """Item 8 — heel centring, from the rear view.
+
+    Offset between the silhouette's own mirror-symmetry axis and the geometric
+    centre of the heel band. Left-right asymmetry is invisible in profile, so
+    this item genuinely exists only in a rear or top view.
+    """
+    item = BY_ID["heel_center"]
+    ys, xs = np.where(mask > 0)
+    if len(xs) < 200:
+        return _rec(item, note="실루엣 부족")
+    y0, y1 = ys.min(), ys.max()
+    band_m = mask.copy()
+    band_m[: int(y0 + 0.35 * (y1 - y0))] = 0     # heel counter band
+    b = band_m > 0
+    if b.sum() < 200:
+        return _rec(item, note="힐 밴드 부족")
+    bxs = np.where(b.any(axis=0))[0]
+    geo_c = 0.5 * (bxs.min() + bxs.max())
+
+    # symmetry axis: the vertical line whose mirror overlaps the mask best
+    best_c, best_s = geo_c, -1
+    for dx in np.linspace(-0.06, 0.06, 25):
+        c = geo_c + dx * (bxs.max() - bxs.min())
+        sh = int(round(2 * c - mask.shape[1] + 1))
+        flip = np.fliplr(b)
+        flip = np.roll(flip, sh, axis=1)
+        s = float((b & flip).sum())
+        if s > best_s:
+            best_s, best_c = s, c
+    off = abs(best_c - geo_c)
+    return _rec(item, measured=round(M.permille(off, ref_len), 2), status="MEASURED",
+                geometry={"type": "axis", "sym_x": float(best_c),
+                          "geo_x": float(geo_c),
+                          "y": [float(y0 + 0.35 * (y1 - y0)), float(y1)]},
+                note=("후면 실루엣의 대칭축과 힐 밴드 기하 중심의 수평 편차입니다. "
+                      "0에 가까울수록 중심이 맞은 것입니다."))
+
+
+def item_strobel(bgr, mask, ref_len):
+    """Item 9 geometry — centreline and quarter-station widths, bottom view.
+
+    The vendor's sequence exactly: principal axis, centreline, left/right
+    extremes, quarter positions from the overall length, width at three
+    stations. What we do NOT have is a strobel board: every public shoe is a
+    finished shoe, so this runs on an OUTSOLE outline. The geometry transfers;
+    the strobel appearance model and the red mark do not.
+    """
+    item = BY_ID["strobel"]
+    ys, xs = np.where(mask > 0)
+    if len(xs) < 300:
+        return _rec(item, note="실루엣 부족")
+    p = np.stack([xs, ys], 1).astype(np.float64)
+    c = p.mean(0)
+    _, _, vt = np.linalg.svd(p - c, full_matrices=False)
+    ax, per = vt[0], vt[1]
+    t = (p - c) @ ax
+    t0, t1 = t.min(), t.max()
+
+    widths, stations = [], []
+    for f in (0.25, 0.50, 0.75):
+        tv = t0 + (t1 - t0) * f
+        sel = np.abs(t - tv) < max(1.5, 0.004 * (t1 - t0))
+        if sel.sum() < 8:
+            continue
+        s = (p[sel] - c) @ per
+        widths.append(float(s.max() - s.min()))
+        a = c + ax * tv + per * s.min()
+        b = c + ax * tv + per * s.max()
+        stations.append([a.tolist(), b.tolist()])
+    if len(widths) < 2:
+        return _rec(item, note="4분할 폭 계측 실패")
+    waist = widths[1] / max(0.5 * (widths[0] + widths[2]), 1e-6) if len(widths) == 3 else None
+    return _rec(item, measured=round(M.permille(float(np.median(widths)), ref_len), 2),
+                status="MEASURED",
+                geometry={"type": "stations2", "segs": stations,
+                          "widths_permille": [round(M.permille(w, ref_len), 1) for w in widths],
+                          "waist_ratio": None if waist is None else round(waist, 3)},
+                note=("중심축→중심선→종단 대비 4분할 3지점 폭이라는 원 사양 순서를 그대로 "
+                      "따랐습니다. 다만 공개 데이터에 라스트 갑피가 없어 스트로벨 보드가 "
+                      "아닌 아웃솔 외곽에서 기하만 검증했습니다. 홀 내 RED MARK 검출은 "
+                      "실제 리그 촬영 없이는 검증할 수 없습니다."))
+
+
 def not_sensed(item_id, view):
     it = BY_ID[item_id]
     cams = ", ".join(it["cameras"]) or "-"
@@ -390,6 +534,23 @@ def inspect(bgr, mask, parts, view="lateral"):
         recs["heel_height"] = item_heel_height(mask, gray, bl, ref_len, parts)
         recs["heel_overlay"] = item_heel_overlay(mask, gray, bl, ref_len)
         for k in ("eyestay_width", "heel_center", "strobel"):
+            recs[k] = not_sensed(k, view)
+    elif view == "top":
+        recs["eyestay_width"] = item_eyestay_width(bgr, mask, ref_len)
+        for k in ("tip_length", "tip_center", "forefoot_mudguard", "heel_mudguard",
+                  "heel_height", "heel_overlay", "heel_center", "strobel"):
+            recs[k] = not_sensed(k, view)
+    elif view == "rear":
+        recs["heel_center"] = item_heel_center(bgr, mask, ref_len)
+        recs["heel_height"] = item_heel_height(mask, gray, bl, ref_len, parts)
+        recs["heel_overlay"] = item_heel_overlay(mask, gray, bl, ref_len)
+        for k in ("tip_length", "tip_center", "eyestay_width",
+                  "forefoot_mudguard", "heel_mudguard", "strobel"):
+            recs[k] = not_sensed(k, view)
+    elif view == "bottom":
+        recs["strobel"] = item_strobel(bgr, mask, ref_len)
+        for k in ("tip_length", "tip_center", "eyestay_width", "forefoot_mudguard",
+                  "heel_mudguard", "heel_height", "heel_overlay", "heel_center"):
             recs[k] = not_sensed(k, view)
     else:
         for it in ITEMS:

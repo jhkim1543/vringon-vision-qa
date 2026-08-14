@@ -2,7 +2,18 @@
 "use strict";
 
 const $ = (id) => document.getElementById(id);
-const S = { manifest: null, sel: null, rec: null, layer: "measure", itemSel: null };
+const S = { manifest: null, sel: null, rec: null, layer: "measure", itemSel: null,
+            track: "photo", tracks: {} };
+
+/* Two acquisition tracks, because they answer different questions:
+   photo — real product photographs, lateral only, no scale
+   gso   — orthographic renders of metric CC BY 4.0 meshes: every camera view
+           the spec needs, and millimetres that can be checked against truth */
+const TRACKS = {
+  photo: { base: "assets/inspect", label: "제품 사진 (측면)" },
+  gso: { base: "assets/gso", label: "GSO 렌더 (4뷰 · mm 실측)" },
+};
+const base = () => TRACKS[S.track].base;
 
 const STATUS_LABEL = {
   MEASURED: ["계측", "ok"],
@@ -30,12 +41,16 @@ async function jget(u) {
 }
 
 (async function boot() {
-  try {
-    S.manifest = await jget("assets/inspect/manifest.json");
-  } catch (e) {
+  for (const [k, t] of Object.entries(TRACKS)) {
+    try { S.tracks[k] = await jget(t.base + "/manifest.json"); } catch (e) {}
+  }
+  if (!Object.keys(S.tracks).length) {
     $("gallery").innerHTML = `<div class="empty">검사 결과를 불러오지 못했습니다.</div>`;
     return;
   }
+  S.track = S.tracks.photo ? "photo" : Object.keys(S.tracks)[0];
+  S.manifest = S.tracks[S.track];
+  renderTrackBar();
   renderSpec();
   renderGallery();
   if (S.manifest.samples.length) select(S.manifest.samples[0].id);
@@ -45,9 +60,34 @@ async function jget(u) {
     S.layer = b.dataset.layer;
     [...$("layerChips").querySelectorAll(".chip")].forEach((c) =>
       c.classList.toggle("is-on", c.dataset.layer === S.layer));
-    $("shot").src = `assets/inspect/${S.sel}/${S.layer === "measure" ? "measure" : "image"}.jpg`;
+    $("shot").src = `${base()}/${S.sel}/${S.layer === "measure" ? "measure" : "image"}.jpg`;
   });
 })();
+
+/* ---------- acquisition track switch ---------- */
+function renderTrackBar() {
+  const el = $("trackBar");
+  el.innerHTML = Object.entries(TRACKS).filter(([k]) => S.tracks[k]).map(
+    ([k, t]) => `<button class="chip ${S.track === k ? "is-on" : ""}" data-track="${k}">${t.label}</button>`
+  ).join("") + `<span class="trackinfo" id="trackInfo"></span>`;
+  el.querySelectorAll("[data-track]").forEach((b) =>
+    b.addEventListener("click", async () => {
+      S.track = b.dataset.track;
+      S.manifest = S.tracks[S.track];
+      S.itemSel = null;
+      renderTrackBar();
+      renderSpec();
+      renderGallery();
+      if (S.manifest.samples.length) await select(S.manifest.samples[0].id);
+    }));
+  const m = S.manifest;
+  const gt = m.ground_truth, ds = m.dataset;
+  $("trackInfo").innerHTML = gt
+    ? `실측 대조 — 기준길이 추정 <b>평균 절대오차 ${gt.mean_abs_err_pct}%</b> ` +
+      `(p95 ${gt.p95_abs_err_pct}%, n=${gt.n}) · ${ds.license}<br>` +
+      `<i>${ds.caveat}</i>`
+    : `제품 사진은 스케일 기준이 없어 mm 환산이 불가능하며, 측면 뷰만 존재합니다.`;
+}
 
 /* ---------- spec header: the eleven items and the rig they came from ---------- */
 function renderSpec() {
@@ -65,12 +105,15 @@ function renderSpec() {
 function renderGallery() {
   const g = {};
   for (const s of S.manifest.samples) (g[s.sku] = g[s.sku] || []).push(s);
+  const label = (s) => (S.track === "gso"
+    ? (s.view || "") + (s.length_mm ? ` · ${s.length_mm}mm` : "")
+    : s.id.split("_").slice(1).join("_"));
   $("gallery").innerHTML = Object.entries(g).map(([sku, list]) => `
-    <div class="grp">${sku}</div>
+    <div class="grp">${sku.replace(/_/g, " ").slice(0, 34)}</div>
     ${list.map((s) => `
       <button class="thumb ${S.sel === s.id ? "is-sel" : ""}" data-id="${s.id}">
-        <img src="assets/inspect/${s.id}/image.jpg" alt="">
-        <span class="thumb__m"><span>${s.id.split("_").slice(1).join("_")}</span>
+        <img src="${base()}/${s.id}/image.jpg" alt="">
+        <span class="thumb__m"><span>${label(s)}</span>
         <span class="v ${s.verdict}">${s.verdict}</span></span>
       </button>`).join("")}`).join("");
   $("gallery").querySelectorAll(".thumb").forEach(
@@ -80,8 +123,8 @@ function renderGallery() {
 async function select(id) {
   S.sel = id;
   S.itemSel = null;
-  S.rec = await jget(`assets/inspect/${id}/result.json`);
-  $("shot").src = `assets/inspect/${id}/${S.layer === "measure" ? "measure" : "image"}.jpg`;
+  S.rec = await jget(`${base()}/${id}/result.json`);
+  $("shot").src = `${base()}/${id}/${S.layer === "measure" ? "measure" : "image"}.jpg`;
   renderVerdict();
   renderTable();
   renderGallery();
@@ -95,9 +138,14 @@ function renderVerdict() {
   const s = S.rec.summary;
   $("verdictSub").innerHTML =
     `${sub} · 계측 <b>${s.n_measured}</b> · 참고 <b>${s.n_advisory}</b> · 미계측 <b>${s.n_not_sensed}</b>`;
-  const gold = S.manifest.golden[S.rec.sku];
+  // the photo track groups golden statistics by style, the GSO track by camera
+  // view, so the count has to be derived rather than read from one fixed field
+  const g = S.manifest.golden[S.rec.sku] || S.manifest.golden[S.rec.view] || {};
+  const perItem = g.stats || g;
+  const n = g.n_golden != null ? g.n_golden
+    : Math.max(0, ...Object.values(perItem).map((x) => (x && x.n) || 0));
   $("goldenNote").innerHTML =
-    `골든 샘플 <b>${gold.n_golden}장</b>에서 항목별 중앙값과 로버스트 편차(1.4826×MAD)를 구하고, ` +
+    `골든 샘플 <b>${n}장</b>에서 항목별 중앙값과 로버스트 편차(1.4826×MAD)를 구하고, ` +
     `허용 범위를 <b>중앙값 ± ${S.manifest.k_sigma}σ</b>로 잡았습니다. ` +
     `측정 불확도만큼의 가드밴드 안쪽은 <b>REVIEW</b>로 두어, 측정이 구분하지 못하는 구간을 ` +
     `합격이나 불합격으로 단정하지 않습니다.`;
@@ -124,7 +172,8 @@ function renderTable() {
   $("itemTable").innerHTML = S.rec.items.map((r) => {
     const [sl, sc] = STATUS_LABEL[r.status] || [r.status, "off"];
     const val = r.measured == null ? "—"
-      : `${r.measured.toFixed(r.units === "%" ? 1 : 2)}<em>${r.units === "%" ? "%" : "‰"}</em>`;
+      : `${r.measured.toFixed(r.units === "%" ? 1 : 2)}<em>${r.units === "%" ? "%" : "‰"}</em>` +
+        (r.mm != null ? `<b class="mm">${r.mm} mm</b>` : "");
     const tol = r.tol_lower == null ? "—"
       : `${r.tol_lower.toFixed(1)} ~ ${r.tol_upper.toFixed(1)}`;
     return `<tr data-item="${r.item_id}" class="${S.itemSel === r.item_id ? "is-open" : ""}">
